@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Верхняя часть с поиском -->
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Поиск"
+        android:background="@drawable/button_background_krugloekoroche" />
+
+    <!-- Средняя часть с "плиткой 2x3" -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="585dp"
+        android:layout_below="@id/editTextSearch"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/fone_background1"
+        android:columnCount="3"
+        android:rowCount="2">
+
+        <!-- Ячейка 1 -->
+        <RelativeLayout
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp">
+
+            <!-- Изображение -->
+            <ImageView
+                android:id="@+id/rest1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/logo" />
+
+            <!-- Текст1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ImageView"
+                android:text="Текст1" />
+
+            <!-- Текст2 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView1"
+                android:text="Текст2" />
+
+            <!-- Кнопка "+" -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView2"
+                android:text="+" />
+
+            <!-- Кнопка "-" -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView2"
+                android:layout_toRightOf="@id/buttonPlus"
+                android:text="-" />
+
+        </RelativeLayout>
+
+        <!-- Другие ячейки аналогичны, просто повторите структуру -->
+
+    </GridLayout>
+
+    <!-- Нижняя часть с тремя кнопками -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp">
+
+        <!-- Кнопка главная -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="дом" />
+
+        <!-- Кнопка корзина -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="корзина" />
+
+        <!-- Кнопка аккаунт -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="аккаунт" />
+
+    </LinearLayout>
+
+</RelativeLayout>
