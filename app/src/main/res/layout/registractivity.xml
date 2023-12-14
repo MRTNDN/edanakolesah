@@ -54,6 +54,7 @@
             android:hint="Введите пароль"
             android:inputType="textPassword"
             android:gravity="center"
+
             android:textColor="@color/textknopka"
             android:contentDescription="Поле для ввода пароля" />
 
@@ -63,12 +64,14 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
+            android:gravity="center"
+            android:textAlignment="center"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="7dp"
             android:background="@drawable/button_background_krugloekoroche"
-            android:textColor="@color/textknopka"
-            android:hint="выбрать город"
-            android:contentDescription="выборка города из списка" />
+            android:entries="@array/city_array"
+            android:popupBackground="@android:color/white"
+             />
 
         <!-- Поле для ввода данных 4 -->
         <EditText
