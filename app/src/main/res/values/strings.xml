@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">edanakolesah</string>
+
+        <string-array name="city_array">
+            <item>Выберите город</item>
+            <item>Москва</item>
+            <item>Омск</item>
+            <item>Екатеринбург</item>
+            <!-- Добавьте свои города по мере необходимости -->
+        </string-array>
+
+</resources>

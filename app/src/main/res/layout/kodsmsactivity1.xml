@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:background="#99FF99"
+    tools:context=".registrActivity">
+
+    <!-- Верхняя часть с обрезанным логотипом (55/145 экрана) -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="55"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        android:contentDescription="Описание изображения" />
+
+    <!-- Нижняя часть с зеленым фоном (90/145 экрана) -->
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:orientation="vertical"
+        android:background="@drawable/fone_background1">
+
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:hint="введите код"
+            android:gravity="center"
+            android:textColor="@color/textknopka"
+            android:contentDescription="Поле для ввода кода" />
+
+
+        <Button
+            android:id="@+id/BText"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="215dp"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:text="Отправить"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:contentDescription="кнопка для отправки кода" />
+
+    </LinearLayout>
+</LinearLayout>

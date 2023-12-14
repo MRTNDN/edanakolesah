@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:background="#99FF99"
+    tools:context=".registrActivity">
+
+    <!-- Верхняя часть с обрезанным логотипом (55/145 экрана) -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="55"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        android:contentDescription="Описание изображения" />
+
+    <!-- Нижняя часть с зеленым фоном (90/145 экрана) -->
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="90"
+        android:orientation="vertical"
+        android:background="@drawable/fone_background1">
+
+        <!-- Поле для ввода логина -->
+        <EditText
+            android:id="@+id/editTextLogin"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:hint="Введите логин"
+            android:gravity="center"
+            android:textColor="@color/textknopka"
+            android:contentDescription="Поле для ввода логина" />
+
+        <!-- Поле для ввода пароля -->
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:hint="Введите пароль"
+            android:inputType="textPassword"
+            android:gravity="center"
+            android:textColor="@color/textknopka"
+            android:contentDescription="Поле для ввода пароля" />
+
+        <!-- Поле для ввода данных 3 -->
+        <Spinner
+            android:id="@+id/spinnerCity"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:textColor="@color/textknopka"
+            android:hint="выбрать город"
+            android:contentDescription="выборка города из списка" />
+
+        <!-- Поле для ввода данных 4 -->
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:hint="адрес доставки"
+            android:gravity="center"
+            android:textColor="@color/textknopka"
+            android:contentDescription="Поле для ввода адреса" />
+
+        <!-- Поле для ввода данных 5 -->
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:hint="номер телефона"
+            android:gravity="center"
+            android:textColor="@color/textknopka"
+            android:contentDescription="Поле для ввода номер" />
+
+        <!-- Поле для ввода данных 6 -->
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:hint="введите ФИО"
+            android:gravity="center"
+            android:textColor="@color/textknopka"
+            android:contentDescription="Поле для ввода фио" />
+
+        <!-- Поле для ввода данных 7 -->
+        <Button
+            android:id="@+id/editText7"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:text="Зарегистрироваться"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:contentDescription="кнопка регистрации" />
+
+    </LinearLayout>
+</LinearLayout>
