@@ -67,6 +67,7 @@ tools:context=".registrActivity">
         android:text="Получить код"
         android:textColor="@color/black"
         android:gravity="center"
+        android:visibility="invisible"
         android:contentDescription="кнопка код" />
 
 </LinearLayout>

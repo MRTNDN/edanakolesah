@@ -14,37 +14,48 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.westernyey.edanakolesah.R;
 
 public class newpassActivity extends AppCompatActivity {
-
+    EditText editTextDoublePass, editTextPass;
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newpassactivity);
 
         // Находим компоненты в макете
-        EditText editTextPass = findViewById(R.id.editTextpass);
-        EditText editTextDoublePass = findViewById(R.id.doublepass);
-        Button button = findViewById(R.id.BText);
+         editTextPass = findViewById(R.id.editTextpass);
+         editTextDoublePass = findViewById(R.id.doublepass);
+         button = findViewById(R.id.BText);
 
-        // Назначаем слушателя для текстового ввода
-        editTextDoublePass.addTextChangedListener(new TextWatcher() {
+        editTextPass.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Ничего не делаем перед изменением текста
+                // Не используется, оставляем пустым
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // Ничего не делаем во время изменения текста
+                // Не используется, оставляем пустым
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // Проверяем, пустой ли текст в EditText1 и в зависимости от этого активируем/деактивируем кнопку4
+                updateButtonState();
+            }
+        });
+        editTextDoublePass.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Не используется, оставляем пустым
             }
 
             @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Не используется, оставляем пустым
+            }
+            @Override
             public void afterTextChanged(Editable editable) {
-                // После изменения текста проверяем, одинаковые ли значения в обоих EditText
-                String pass = editTextPass.getText().toString();
-                String doublePass = editable.toString();
-
-                // Разрешаем или запрещаем нажатие на кнопку в зависимости от результата проверки
-                button.setEnabled(pass.equals(doublePass));
+                // Проверяем, пустой ли текст в EditText1 и в зависимости от этого активируем/деактивируем кнопку4
+                updateButtonState();
             }
         });
 
@@ -65,5 +76,12 @@ public class newpassActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void updateButtonState() {
+        if (editTextPass.getText().toString().trim().isEmpty() | editTextDoublePass.getText().toString().trim().isEmpty()){
+        } else {
+            button.setVisibility(View.VISIBLE);
+        }
     }
 }
