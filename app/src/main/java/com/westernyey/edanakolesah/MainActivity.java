@@ -106,9 +106,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateButtonState() {
         if (editText1.getText().toString().trim().isEmpty() || editText2.getText().toString().trim().isEmpty()) {
-            button3.setEnabled(false);
         } else {
-            button3.setEnabled(true);
+            button3.setVisibility(View.VISIBLE);
         }
     }
 
