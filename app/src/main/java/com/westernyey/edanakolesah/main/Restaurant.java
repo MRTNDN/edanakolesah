@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.westernyey.edanakolesah.R;
 
 public class Restaurant extends AppCompatActivity {
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-    }
-}
+        setContentView(R.layout.restaurant);
+    }}
