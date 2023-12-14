@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "499201975308",
+    "project_id": "cursovai-522e6",
+    "storage_bucket": "cursovai-522e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499201975308:android:b9de3ecb1f6db8a8e37a29",
+        "android_client_info": {
+          "package_name": "com.westernyey.edanakolesah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwWwBZFdwU8Wjm8D3P5CdaiTo1abu7hJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
