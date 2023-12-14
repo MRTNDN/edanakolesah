@@ -67,7 +67,7 @@
             android:background="@drawable/button_background_krugloekoroche"
             android:text="войти"
             android:visibility="invisible"
-            android:onClick="startMain"
+            android:onClick="click"
             android:textColor="@color/black" />
 
         <LinearLayout

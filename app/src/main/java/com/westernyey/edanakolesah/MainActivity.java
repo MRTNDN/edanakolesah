@@ -15,10 +15,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.caverock.androidsvg.SVG;
 import com.caverock.androidsvg.SVGParseException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.InputStream;
 
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Button button4;
     private Button button3;
     private Button button5;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,9 +133,26 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void startMain(View view){
-        Intent intent = new Intent(MainActivity.this, com.westernyey.edanakolesah.main.Main.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(intent);
+    public void click(View view){
+        db.collection("client")
+                .whereEqualTo("login", editText1.getText().toString())
+                .whereEqualTo("password", editText2.getText().toString())
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                Intent intent = new Intent(MainActivity.this, com.westernyey.edanakolesah.main.Main.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                startActivity(intent);
+                            }
+                        } else {
+                            //НУЖЕН ТОСТ КОТОРЫЙ ПИШЕТ ЧТО ТАКОГО ПОЛЬЗОВАТЕЛЯ НЕ СУЩЕСТВУЕТ
+                        }
+                    }
+                });
     }
+
 }
