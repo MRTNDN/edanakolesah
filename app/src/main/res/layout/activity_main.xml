@@ -66,6 +66,7 @@
             android:layout_marginRight="16dp"
             android:background="@drawable/button_background_krugloekoroche"
             android:text="войти"
+            android:onClick="startMain"
             android:textColor="@color/black" />
 
         <LinearLayout

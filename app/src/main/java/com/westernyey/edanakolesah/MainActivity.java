@@ -1,11 +1,14 @@
 package com.westernyey.edanakolesah;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.PictureDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText1;
     private EditText editText2;
     private Button button4;
+    private Button button3;
+    private Button button5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button4 = findViewById(R.id.button4);
-        Button button3 = findViewById(R.id.button3);
-        Button button5 = findViewById(R.id.button5);
+        button3 = findViewById(R.id.button3);
+        button5 = findViewById(R.id.button5);
 
         editText1 = findViewById(R.id.editText1);
         editText2 = findViewById(R.id.editText2);
@@ -52,13 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.westernyey.edanakolesah.main.Main.class);
-                startActivity(intent);
-            }
-        });
+
 
         // Загружаем и устанавливаем SVG для каждого изображения
         loadSvgFromResource(R.raw.vk, R.id.imageView1);
@@ -107,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateButtonState() {
         if (editText1.getText().toString().trim().isEmpty() || editText2.getText().toString().trim().isEmpty()) {
-            button4.setEnabled(false);
+            button3.setEnabled(false);
         } else {
-            button4.setEnabled(true);
+            button3.setEnabled(true);
         }
     }
 
@@ -126,5 +125,11 @@ public class MainActivity extends AppCompatActivity {
         } catch (SVGParseException e) {
             e.printStackTrace();
         }
+    }
+
+    public void startMain(View view){
+        Intent intent = new Intent(MainActivity.this, com.westernyey.edanakolesah.main.Main.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
     }
 }
