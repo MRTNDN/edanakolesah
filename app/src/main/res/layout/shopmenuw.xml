@@ -24,7 +24,8 @@
         android:id="@+id/fragment_buttons_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#CCCCCC">
+        android:background="@color/greenmain"
+        android:layout_alignParentBottom="true">
         <!-- Добавление фрагмента в активность в коде -->
     </FrameLayout>
 </LinearLayout>
