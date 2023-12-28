@@ -1,0 +1,299 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    android:background="@color/greenknopka"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Средняя часть с "плиткой 2x3" -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/fone_background1"
+            android:columnCount="2"
+            android:rowCount="3">
+
+            <!-- Ячейка 1 -->
+            <RelativeLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="8dp">
+
+                <!-- Изображение -->
+                <ImageView
+                    android:id="@+id/rest1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logo" />
+
+                <!-- Текст1 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rest1"
+                    android:id="@+id/textView1"
+                    android:text="Текст1" />
+
+                <!-- Текст2 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView1"
+                    android:id="@+id/textView2"
+                    android:text="Текст2" />
+
+                <!-- Кнопка "+" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2"
+                    android:id="@+id/buttonPlus"
+                    android:text="+" />
+
+                <!-- Кнопка "-" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView2"
+                    android:layout_toRightOf="@id/buttonPlus"
+                    android:text="-" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="8dp">
+
+                <!-- Изображение -->
+                <ImageView
+                    android:id="@+id/rest1.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logo" />
+
+                <!-- Текст1 -->
+                <TextView
+                    android:id="@+id/textView1.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rest1.1"
+                    android:text="Текст1" />
+
+                <!-- Текст2 -->
+                <TextView
+                    android:id="@+id/textView2.1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView1.1"
+                    android:text="Текст2" />
+
+                <!-- Кнопка "+" -->
+                <Button
+                    android:id="@+id/buttonPlus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2.1"
+                    android:text="+" />
+
+                <!-- Кнопка "-" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView2.1"
+                    android:layout_toRightOf="@id/buttonPlus1"
+                    android:text="-" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="8dp">
+
+                <!-- Изображение -->
+                <ImageView
+                    android:id="@+id/rest1.2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logo" />
+
+                <!-- Текст1 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rest1.2"
+                    android:id="@+id/textView1.2"
+                    android:text="Текст1" />
+
+                <!-- Текст2 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView1.2"
+                    android:id="@+id/textView2.2"
+                    android:text="Текст2" />
+
+                <!-- Кнопка "+" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2.2"
+                    android:id="@+id/buttonPlus2"
+                    android:text="+" />
+
+                <!-- Кнопка "-" -->
+                <Button
+                    android:id="@+id/buttonminus1.2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView2.2"
+                    android:layout_toRightOf="@id/buttonPlus2"
+                    android:text="-" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="8dp">
+
+                <!-- Изображение -->
+                <ImageView
+                    android:id="@+id/rest1.3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logo" />
+
+                <!-- Текст1 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rest1.3"
+                    android:id="@+id/textView1.3"
+                    android:text="Текст1" />
+
+                <!-- Текст2 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView1.3"
+                    android:id="@+id/textView2.3"
+                    android:text="Текст2" />
+
+                <!-- Кнопка "+" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2.3"
+                    android:id="@+id/buttonPlus1.3"
+                    android:text="+" />
+
+                <!-- Кнопка "-" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView2.3"
+                    android:layout_toRightOf="@id/buttonPlus1.3"
+                    android:text="-" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="8dp">
+
+                <!-- Изображение -->
+                <ImageView
+                    android:id="@+id/rest1.4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logo" />
+
+                <!-- Текст1 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rest1.4"
+                    android:id="@+id/textView1.4"
+                    android:text="Текст1" />
+
+                <!-- Текст2 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView1.4"
+                    android:id="@+id/textView2.4"
+                    android:text="Текст2" />
+
+                <!-- Кнопка "+" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2.4"
+                    android:id="@+id/buttonPlus2.4"
+                    android:text="+" />
+
+                <!-- Кнопка "-" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView2.4"
+                    android:layout_toRightOf="@id/buttonPlus2.4"
+                    android:text="-" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="8dp">
+
+                <!-- Изображение -->
+                <ImageView
+                    android:id="@+id/rest1.6"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/logo" />
+
+                <!-- Текст1 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rest1.6"
+                    android:id="@+id/textView1.6"
+                    android:text="Текст1" />
+
+                <!-- Текст2 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView1.6"
+                    android:id="@+id/textView2.6"
+                    android:text="Текст2" />
+
+                <!-- Кнопка "+" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2.6"
+                    android:id="@+id/buttonPlus2.6"
+                    android:text="+" />
+
+                <!-- Кнопка "-" -->
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2.6"
+                    android:layout_toRightOf="@+id/buttonPlus2.6"
+                    android:text="-" />
+            </RelativeLayout>
+        </GridLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,6 +1,8 @@
 package com.westernyey.edanakolesah.main;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,41 +14,49 @@ import androidx.fragment.app.FragmentActivity;
 import com.westernyey.edanakolesah.R;
 
 public class shopmenu extends FragmentActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shopmenuw);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_search_up, new fragment_search())
-                    .replace(R.id.fragment_content_container, new ContentFragment())
-                    .replace(R.id.fragment_buttons_container, new ButtonsFragment())
-                    .commit();
+        // Получение данных из Intent
+        Intent intent = getIntent();
+        if (intent != null) {
+            // Определение, какой фрагмент отобразить в середине
+            Fragment fragment = null;
+            String fragmentType = intent.getStringExtra("fragmentType");
+
+            if ("RELA".equals(fragmentType)) {
+                fragment = new FragmentForRELA();
+            } else if ("RELAP".equals(fragmentType)) {
+                fragment = new FragmentForRELAP();
+            } else if ("RELAr".equals(fragmentType)) {
+                fragment = new FragmentForRELAr();
+            }
+
+            // Замена фрагмента в середине
+            if (fragment != null) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, fragment)
+                        .commit();
+                Log.d("shopmenu", "fragmentType: " + fragmentType);
+            }
         }
     }
 
-    public static class fragment_search extends Fragment {
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            // Ваши действия по созданию вида для фрагмента fragment_search
-            return inflater.inflate(R.layout.fragment_search, container, false);
-        }
-    }
+    public class FragmentForRELA extends Fragment implements com.westernyey.edanakolesah.main.FragmentForRELA {
 
-    public static class ContentFragment extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            // Ваши действия по созданию вида для фрагмента ContentFragment
+            // Загружаем разметку фрагмента из XML
             return inflater.inflate(R.layout.stocks, container, false);
         }
     }
 
-    public static class ButtonsFragment extends Fragment {
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            // Ваши действия по созданию вида для фрагмента ButtonsFragment
-            return inflater.inflate(R.layout.fragment_buttons, container, false);
-        }
+    public static class FragmentForRELAP extends Fragment {
+    }
+
+    public static class FragmentForRELAr extends Fragment {
     }
 }

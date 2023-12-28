@@ -42,5 +42,4 @@
             android:name="com.westernyey.edanakolesah.main.shopmenu"
             android:label="shopmenuw" />
     </application>
-
 </manifest>

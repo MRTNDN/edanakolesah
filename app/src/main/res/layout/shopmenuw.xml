@@ -1,4 +1,4 @@
-<!-- Пример макета активности с тремя фрагментами -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,7 +13,7 @@
 
     <!-- Фрагмент для контента -->
     <FrameLayout
-        android:id="@+id/fragment_content_container"
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <!-- Добавление фрагмента в активность в коде -->
@@ -26,6 +26,5 @@
         android:layout_height="wrap_content"
         android:background="@color/greenmain"
         android:layout_alignParentBottom="true">
-        <!-- Добавление фрагмента в активность в коде -->
     </FrameLayout>
 </LinearLayout>
