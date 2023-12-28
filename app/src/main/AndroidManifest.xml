@@ -39,8 +39,8 @@
             android:name="com.westernyey.edanakolesah.main.Main"
             android:label="main" />
         <activity
-            android:name="com.westernyey.edanakolesah.main.Restaurant"
-            android:label="restaurant" />
+            android:name="com.westernyey.edanakolesah.main.shopmenu"
+            android:label="shopmenuw" />
     </application>
 
 </manifest>

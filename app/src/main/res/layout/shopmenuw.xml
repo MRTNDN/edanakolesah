@@ -1,0 +1,30 @@
+<!-- Пример макета активности с тремя фрагментами -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Фрагмент для поиска -->
+    <FrameLayout
+        android:id="@+id/fragment_search_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </FrameLayout>
+
+    <!-- Фрагмент для контента -->
+    <FrameLayout
+        android:id="@+id/fragment_content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Добавление фрагмента в активность в коде -->
+    </FrameLayout>
+
+    <!-- Фрагмент с кнопками -->
+    <FrameLayout
+        android:id="@+id/fragment_buttons_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCC">
+        <!-- Добавление фрагмента в активность в коде -->
+    </FrameLayout>
+</LinearLayout>

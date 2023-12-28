@@ -26,7 +26,7 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Создаем Intent для запуска новой активности
-                Intent intent = new Intent(Main.this, com.westernyey.edanakolesah.main.Restaurant.class);
+                Intent intent = new Intent(Main.this, com.westernyey.edanakolesah.main.shopmenu.class);
                 // Запускаем новую активность
                 startActivity(intent);
             }
