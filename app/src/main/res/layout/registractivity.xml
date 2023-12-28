@@ -127,6 +127,7 @@
             android:text="Зарегистрироваться"
             android:textColor="@color/black"
             android:gravity="center"
+            android:onClick="ButRegistr"
             android:contentDescription="кнопка регистрации" />
 
     </LinearLayout>
