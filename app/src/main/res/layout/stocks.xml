@@ -1,11 +1,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_height="600dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <!-- Средняя часть с "плиткой 2x3" -->
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="585dp"
+        android:layout_height="700dp"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
@@ -16,7 +18,7 @@
 
         <!-- Ячейка 1 -->
         <RelativeLayout
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp">
@@ -63,7 +65,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp">
@@ -109,7 +111,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp">
@@ -155,7 +157,7 @@
                 android:text="-" />
         </RelativeLayout>
         <RelativeLayout
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp">
@@ -201,7 +203,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp">
@@ -234,17 +236,62 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView2.4"
-                android:id="@+id/buttonPlus4"
+                android:id="@+id/buttonPlus2.4"
                 android:text="+" />
 
             <!-- Кнопка "-" -->
             <Button
-                android:id="@+id/buttonMinus4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/buttonPlus4"
-                android:layout_toRightOf="@id/buttonPlus4"
+                android:layout_below="@id/textView2.4"
+                android:layout_toRightOf="@id/buttonPlus2.4"
+                android:text="-" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp">
+
+            <!-- Изображение -->
+            <ImageView
+                android:id="@+id/rest1.6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/logo" />
+
+            <!-- Текст1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rest1.6"
+                android:id="@+id/textView1.6"
+                android:text="Текст1" />
+
+            <!-- Текст2 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1.6"
+                android:id="@+id/textView2.6"
+                android:text="Текст2" />
+
+            <!-- Кнопка "+" -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2.6"
+                android:id="@+id/buttonPlus2.6"
+                android:text="+" />
+
+            <!-- Кнопка "-" -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2.6"
+                android:layout_toRightOf="@+id/buttonPlus2.6"
                 android:text="-" />
         </RelativeLayout>
     </GridLayout>
+    </ScrollView>
 </RelativeLayout>
