@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.westernyey.edanakolesah.vost.newpassActivity;
 
 import java.io.InputStream;
 
@@ -149,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         } else {
-                            //НУЖЕН ТОСТ КОТОРЫЙ ПИШЕТ ЧТО ТАКОГО ПОЛЬЗОВАТЕЛЯ НЕ СУЩЕСТВУЕТ
+                            Toast.makeText(MainActivity.this, "Пользователь не найден!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

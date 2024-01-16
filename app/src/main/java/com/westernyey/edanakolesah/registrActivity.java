@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.westernyey.edanakolesah.vost.newpassActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -72,7 +74,7 @@ public class registrActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        //Нужен тост, который говорит что произошла ошибка сервера
+                        Toast.makeText(registrActivity.this, "ошибка сервера!", Toast.LENGTH_SHORT).show();
                     }
                 });
 

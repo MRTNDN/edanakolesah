@@ -1,12 +1,29 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="600dp"
-    android:background="@color/greenknopka"
-    >
+    android:layout_height="match_parent"
+    android:background="@color/greenknopka">
+
+    <!-- Верхняя часть с EditText -->
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Поиск"
+        android:background="@drawable/button_background_krugloekoroche" />
+
+    <!-- Средняя часть с "плиткой 2x3" -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <!-- Средняя часть с "плиткой 2x3" -->
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextSearch">
+
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="700dp"
@@ -296,4 +313,37 @@
             </RelativeLayout>
         </GridLayout>
     </ScrollView>
+    <!-- Нижняя часть с тремя кнопками -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp">
+
+        <!-- Кнопка главная -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:text="дом" />
+
+        <!-- Кнопка корзина -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:text="корзина" />
+
+        <!-- Кнопка аккаунт -->
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:text="аккаунт" />
+
+    </LinearLayout>
 </RelativeLayout>

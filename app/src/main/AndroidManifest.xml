@@ -42,5 +42,11 @@
         <activity
             android:name="com.westernyey.edanakolesah.main.shopmenu"
             android:label="shopmenuw" />
+        <activity
+            android:name="com.westernyey.edanakolesah.main.restaraunt"
+            android:label="restarauntw" />
+        <activity
+            android:name="com.westernyey.edanakolesah.main.Stocks"
+            android:label="stocks" />
     </application>
 </manifest>
