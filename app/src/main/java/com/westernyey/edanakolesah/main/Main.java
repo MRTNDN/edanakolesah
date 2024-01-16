@@ -5,9 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.westernyey.edanakolesah.R;
 
 public class Main extends AppCompatActivity {

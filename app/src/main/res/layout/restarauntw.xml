@@ -47,29 +47,31 @@
                     android:id="@+id/rest1"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/logo" />
+                    />
 
                 <!-- Текст1 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:layout_below="@+id/rest1"
-                    android:id="@+id/textView1"
+                    android:id="@+id/nazvrest1"
                     android:text="Текст1" />
 
                 <!-- Текст2 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView1"
-                    android:id="@+id/textView2"
+                    android:layout_below="@+id/nazvrest1"
+                    android:id="@+id/pricerest1"
+                    android:gravity="center"
                     android:text="Текст2" />
 
                 <!-- Кнопка "+" -->
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView2"
+                    android:layout_below="@+id/pricerest1"
                     android:id="@+id/buttonPlus"
                     android:text="+" />
 
@@ -77,7 +79,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView2"
+                    android:layout_below="@id/pricerest1"
                     android:layout_toRightOf="@id/buttonPlus"
                     android:text="-" />
 
@@ -91,25 +93,27 @@
 
                 <!-- Изображение -->
                 <ImageView
-                    android:id="@+id/rest1.1"
+                    android:id="@+id/rest2"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/logo" />
+                    />
 
                 <!-- Текст1 -->
                 <TextView
-                    android:id="@+id/textView1.1"
+                    android:id="@+id/nazvrest2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rest1.1"
+                    android:layout_below="@+id/rest2"
+                    android:gravity="center"
                     android:text="Текст1" />
 
                 <!-- Текст2 -->
                 <TextView
-                    android:id="@+id/textView2.1"
+                    android:id="@+id/pricerest2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView1.1"
+                    android:gravity="center"
+                    android:layout_below="@+id/nazvrest2"
                     android:text="Текст2" />
 
                 <!-- Кнопка "+" -->
@@ -117,14 +121,14 @@
                     android:id="@+id/buttonPlus1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView2.1"
+                    android:layout_below="@+id/pricerest2"
                     android:text="+" />
 
                 <!-- Кнопка "-" -->
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView2.1"
+                    android:layout_below="@id/pricerest2"
                     android:layout_toRightOf="@id/buttonPlus1"
                     android:text="-" />
 
@@ -137,32 +141,34 @@
 
                 <!-- Изображение -->
                 <ImageView
-                    android:id="@+id/rest1.2"
+                    android:id="@+id/rest3"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/logo" />
+                     />
 
                 <!-- Текст1 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rest1.2"
-                    android:id="@+id/textView1.2"
+                    android:layout_below="@+id/rest3"
+                    android:id="@+id/nazvrest3"
+                    android:gravity="center"
                     android:text="Текст1" />
 
                 <!-- Текст2 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView1.2"
-                    android:id="@+id/textView2.2"
+                    android:layout_below="@+id/nazvrest3"
+                    android:id="@+id/pricerest3"
+                    android:gravity="center"
                     android:text="Текст2" />
 
                 <!-- Кнопка "+" -->
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView2.2"
+                    android:layout_below="@+id/pricerest3"
                     android:id="@+id/buttonPlus2"
                     android:text="+" />
 
@@ -171,7 +177,7 @@
                     android:id="@+id/buttonminus1.2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView2.2"
+                    android:layout_below="@id/pricerest3"
                     android:layout_toRightOf="@id/buttonPlus2"
                     android:text="-" />
             </RelativeLayout>
@@ -183,32 +189,34 @@
 
                 <!-- Изображение -->
                 <ImageView
-                    android:id="@+id/rest1.3"
+                    android:id="@+id/rest4"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/logo" />
+                     />
 
                 <!-- Текст1 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rest1.3"
-                    android:id="@+id/textView1.3"
+                    android:layout_below="@+id/rest4"
+                    android:id="@+id/nazvrest4"
+                    android:gravity="center"
                     android:text="Текст1" />
 
                 <!-- Текст2 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView1.3"
-                    android:id="@+id/textView2.3"
+                    android:layout_below="@+id/nazvrest4"
+                    android:id="@+id/pricerest4"
+                    android:gravity="center"
                     android:text="Текст2" />
 
                 <!-- Кнопка "+" -->
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView2.3"
+                    android:layout_below="@+id/pricerest4"
                     android:id="@+id/buttonPlus1.3"
                     android:text="+" />
 
@@ -216,7 +224,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView2.3"
+                    android:layout_below="@id/pricerest4"
                     android:layout_toRightOf="@id/buttonPlus1.3"
                     android:text="-" />
 
@@ -229,32 +237,34 @@
 
                 <!-- Изображение -->
                 <ImageView
-                    android:id="@+id/rest1.4"
+                    android:id="@+id/rest5"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/logo" />
+                     />
 
                 <!-- Текст1 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rest1.4"
-                    android:id="@+id/textView1.4"
+                    android:layout_below="@+id/rest5"
+                    android:id="@+id/nazvrest5"
+                    android:gravity="center"
                     android:text="Текст1" />
 
                 <!-- Текст2 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView1.4"
-                    android:id="@+id/textView2.4"
+                    android:layout_below="@+id/nazvrest5"
+                    android:id="@+id/pricerest5"
+                    android:gravity="center"
                     android:text="Текст2" />
 
                 <!-- Кнопка "+" -->
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView2.4"
+                    android:layout_below="@+id/pricerest5"
                     android:id="@+id/buttonPlus2.4"
                     android:text="+" />
 
@@ -262,7 +272,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/textView2.4"
+                    android:layout_below="@id/pricerest5"
                     android:layout_toRightOf="@id/buttonPlus2.4"
                     android:text="-" />
             </RelativeLayout>
@@ -274,32 +284,34 @@
 
                 <!-- Изображение -->
                 <ImageView
-                    android:id="@+id/rest1.6"
+                    android:id="@+id/rest6"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:src="@drawable/logo" />
+                     />
 
                 <!-- Текст1 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/rest1.6"
-                    android:id="@+id/textView1.6"
+                    android:layout_below="@+id/rest6"
+                    android:id="@+id/nazvrest6"
+                    android:gravity="center"
                     android:text="Текст1" />
 
                 <!-- Текст2 -->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView1.6"
-                    android:id="@+id/textView2.6"
+                    android:layout_below="@+id/nazvrest6"
+                    android:id="@+id/pricerest6"
+                    android:gravity="center"
                     android:text="Текст2" />
 
                 <!-- Кнопка "+" -->
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView2.6"
+                    android:layout_below="@+id/pricerest6"
                     android:id="@+id/buttonPlus2.6"
                     android:text="+" />
 
@@ -307,7 +319,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView2.6"
+                    android:layout_below="@+id/pricerest6"
                     android:layout_toRightOf="@+id/buttonPlus2.6"
                     android:text="-" />
             </RelativeLayout>
