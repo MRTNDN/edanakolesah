@@ -6,14 +6,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.westernyey.edanakolesah.R;
+
+import java.util.List;
 
 public class Main extends AppCompatActivity {
 
+    Button button1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        //Меняем имя вошедшего
+        button1 = findViewById(R.id.buttonTop);
+        Bundle extras = getIntent().getExtras();
+
+        String value = extras.getString("key");
+        button1.setText("Здравствуйте, "+value);
+
 
         // Находим RelativeLayout по его идентификатору
         RelativeLayout relativeLayout = findViewById(R.id.RELAP);

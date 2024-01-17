@@ -26,6 +26,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.westernyey.edanakolesah.main.Main;
 import com.westernyey.edanakolesah.vost.newpassActivity;
 
 import java.io.InputStream;
@@ -146,8 +147,11 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
 
+                                String name = document.getString("name");
+
                                 Intent intent = new Intent(MainActivity.this, com.westernyey.edanakolesah.main.Main.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                intent.putExtra("key",name);
                                 startActivity(intent);
                             }
                         } else {
