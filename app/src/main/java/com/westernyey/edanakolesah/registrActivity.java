@@ -2,24 +2,36 @@ package com.westernyey.edanakolesah;
 
 import static android.content.ContentValues.TAG;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.local.QueryResult;
+import com.google.firebase.firestore.model.Document;
+import com.google.firebase.firestore.model.DocumentKey;
 import com.westernyey.edanakolesah.vost.newpassActivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class registrActivity extends AppCompatActivity {
@@ -36,12 +48,33 @@ public class registrActivity extends AppCompatActivity {
         addres = findViewById(R.id.editText4);
         number_phone = findViewById(R.id.editText5);
         full_name = findViewById(R.id.editText6);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.city_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCity.setAdapter(adapter);
+
+        //Заполнение спинера из БД
+
+        ArrayList arrayList = new ArrayList();
+
+            CollectionReference colRef = db.collection("town");
+            colRef.get()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            List<DocumentSnapshot> documents = task.getResult().getDocuments();
+                            for (DocumentSnapshot doc : documents) {
+
+                                String town = doc.getString("name_town");
+                                arrayList.add(town);
+
+                            }
+
+                            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
+                            adapter.setDropDownViewResource(androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
+                            spinnerCity.setAdapter(adapter);
+
+                        }
+                    });
+    }
 
         // Другие действия, которые могут быть выполнены при создании активности
-    }
+
 
     public void ButRegistr(View view){
         String selectedTown = spinnerCity.getSelectedItem().toString();
