@@ -91,12 +91,8 @@ public class restaraunt extends AppCompatActivity {
                                 if (idProduct.equals(id)) {
                                     // Если нашли совпадение, выводим данные документа
                                     String image = doc.getString("image");
-                                        if(num == 13){
-                                            loadImageFromUrl(image, images[num-13]);
-                                        }
-                                        else {
-                                            loadImageFromUrl(image, images[num-13]);
-                                        }
+                                    loadImageFromUrl(image, images[num-13]);
+
                                 }
                             }
                         }
@@ -114,14 +110,8 @@ public class restaraunt extends AppCompatActivity {
                                     // Если нашли совпадение, выводим данные документа
                                     String name = doc.getString("name_product");
                                     String price = doc.getString("price");
-                                    if(num == 13){
                                         name_prod[num-13].setText(name);
                                         price_prod[num-13].setText(price + " ₽");
-                                    }
-                                    else {
-                                        name_prod[num-13].setText(name);
-                                        price_prod[num-13].setText(price+ " ₽");
-                                    }
                                 }
                             }
                         }
