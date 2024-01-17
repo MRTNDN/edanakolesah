@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greenknopka"
-    >
+    xmlns:svgimageview="http://schemas.android.com/apk/res-auto"
+    android:background="@color/greenknopka">
 
     <!-- Верхняя часть с кнопкой -->
     <RelativeLayout
@@ -59,8 +59,8 @@
                             android:id="@+id/imageView1"
                             android:layout_width="match_parent"
                             android:layout_height="160dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/pick" />
+                            android:scaleType="fitXY"
+                            android:src="@drawable/product" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -88,8 +88,8 @@
                             android:id="@+id/imageView2"
                             android:layout_width="match_parent"
                             android:layout_height="160dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/pick" />
+                            android:scaleType="fitXY"
+                            android:src="@drawable/restaraunt" />
 
                         <!-- Текст -->
                         <TextView
@@ -120,8 +120,9 @@
                             android:id="@+id/imageView3"
                             android:layout_width="match_parent"
                             android:layout_height="160dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/pick" />
+                            android:scaleType="fitXY"
+                            android:src="@drawable/stock"
+                            />
 
                         <TextView
                             android:layout_width="match_parent"
