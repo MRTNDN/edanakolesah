@@ -54,5 +54,8 @@
         <activity
             android:name="com.westernyey.edanakolesah.main.Account"
             android:label="account" />
+        <activity
+            android:name="com.westernyey.edanakolesah.main.nastacc.Support"
+            android:label="support" />
     </application>
 </manifest>

@@ -3,7 +3,11 @@
     android:layout_height="match_parent"
     android:background="@color/greenknopka">
 
-    <!-- Верхняя часть с EditText -->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <Button
         android:id="@+id/editTextSearch"
         android:layout_width="match_parent"
@@ -17,22 +21,19 @@
         android:layout_marginBottom="16dp"
         android:hint="Настройки профиля"
         android:background="@drawable/button_background_krugloekoroche" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
     <Button
         android:id="@+id/adressbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:minHeight="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/button_background_krugloekoroche"
+        android:gravity="center"
         android:hint="Изменить адрес"
-        android:background="@drawable/button_background_krugloekoroche" />
+        android:minHeight="38dp" />
+
     <Button
         android:id="@+id/oplbutton"
         android:layout_width="match_parent"

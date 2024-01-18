@@ -1,4 +1,4 @@
-package com.westernyey.edanakolesah.main;
+package com.westernyey.edanakolesah.main.nastacc;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,29 +8,23 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.westernyey.edanakolesah.R;
+import com.westernyey.edanakolesah.main.Bin;
+import com.westernyey.edanakolesah.main.Main;
 
-public class Account extends AppCompatActivity {
+public class Support extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.account);
+        setContentView(R.layout.support);
         Button buttonMain = findViewById(R.id.buttonmain);
         Button buttonBin = findViewById(R.id.buttonbin);
         Button buttonAccount = findViewById(R.id.buttonaccount);
-        Button tpbutton = findViewById(R.id.tpbutton);
+
         buttonMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Обработчик для кнопки "главная"
-                Intent intent = new Intent(Account.this, Main.class);
-                startActivity(intent);
-            }
-        });
-        tpbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Обработчик для кнопки "главная"
-                Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.main.nastacc.Support.class);
+                Intent intent = new Intent(com.westernyey.edanakolesah.main.nastacc.Support.this, Main.class);
                 startActivity(intent);
             }
         });
@@ -39,7 +33,7 @@ public class Account extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Обработчик для кнопки "корзина"
-                Intent intent = new Intent(Account.this, Bin.class);
+                Intent intent = new Intent(com.westernyey.edanakolesah.main.nastacc.Support.this, Bin.class);
                 startActivity(intent);
             }
         });
@@ -48,7 +42,7 @@ public class Account extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Обработчик для кнопки "аккаунт"
-                Intent intent = new Intent(Account.this, Account.class);
+                Intent intent = new Intent(com.westernyey.edanakolesah.main.nastacc.Support.this, com.westernyey.edanakolesah.main.Account.class);
                 startActivity(intent);
             }
         });
