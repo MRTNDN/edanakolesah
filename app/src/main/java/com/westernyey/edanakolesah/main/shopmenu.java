@@ -1,10 +1,13 @@
 // shopmenu.java
 package com.westernyey.edanakolesah.main;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -130,5 +133,35 @@ public class shopmenu extends AppCompatActivity {
                 }
             }
         }.execute(url);
+        Button buttonMain = findViewById(R.id.buttonmain);
+        Button buttonBin = findViewById(R.id.buttonbin);
+        Button buttonAccount = findViewById(R.id.buttonaccount);
+
+        buttonMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "главная"
+                Intent intent = new Intent(shopmenu.this, Main.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonBin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "корзина"
+                Intent intent = new Intent(shopmenu.this, Bin.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "аккаунт"
+                Intent intent = new Intent(shopmenu.this, Account.class); //
+                startActivity(intent);
+            }
+        });
     }
 }

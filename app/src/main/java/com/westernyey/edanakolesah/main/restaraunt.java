@@ -1,7 +1,10 @@
 // shopmenu.java
 package com.westernyey.edanakolesah.main;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.firestore.CollectionReference;
@@ -123,8 +126,39 @@ public class restaraunt extends AppCompatActivity {
                 }
             }
         }.execute(url);
+        Button buttonMain = findViewById(R.id.buttonmain);
+        Button buttonBin = findViewById(R.id.buttonbin);
+        Button buttonAccount = findViewById(R.id.buttonaccount);
+
+        buttonMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "главная"
+                Intent intent = new Intent(restaraunt.this, Main.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonBin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "корзина"
+                Intent intent = new Intent(restaraunt.this, Bin.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "аккаунт"
+                Intent intent = new Intent(restaraunt.this, Account.class);
+                startActivity(intent);
+            }
+        });
     }
 }
+
 
 
 

@@ -1,10 +1,13 @@
 // shopmenu.java
 package com.westernyey.edanakolesah.main;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,9 +26,15 @@ import java.net.URL;
 import java.util.List;
 
 public class Stocks extends AppCompatActivity {
-    ImageView imgStock1;ImageView imgStock2;ImageView imgStock3;ImageView imgStock4;ImageView imgStock5;ImageView imgStock6;
+    ImageView imgStock1;
+    ImageView imgStock2;
+    ImageView imgStock3;
+    ImageView imgStock4;
+    ImageView imgStock5;
+    ImageView imgStock6;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    TextView nazvStock1,nazvStock2,nazvStock3,nazvStock4,nazvStock5,nazvStock6, priceStock1,priceStock2,priceStock3,priceStock4,priceStock5,priceStock6;
+    TextView nazvStock1, nazvStock2, nazvStock3, nazvStock4, nazvStock5, nazvStock6, priceStock1, priceStock2, priceStock3, priceStock4, priceStock5, priceStock6;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +83,7 @@ public class Stocks extends AppCompatActivity {
                                 if (idProduct.equals(id)) {
                                     // Если нашли совпадение, выводим данные документа
                                     String image = doc.getString("image");
-                                    loadImageFromUrl(image, images[num-1]);
+                                    loadImageFromUrl(image, images[num - 1]);
 
                                 }
                             }
@@ -93,8 +102,8 @@ public class Stocks extends AppCompatActivity {
                                     // Если нашли совпадение, выводим данные документа
                                     String name = doc.getString("name_product");
                                     String price = doc.getString("price");
-                                    name_prod[num-1].setText(name);
-                                    price_prod[num-1].setText(price + " ₽");
+                                    name_prod[num - 1].setText(name);
+                                    price_prod[num - 1].setText(price + " ₽");
                                 }
                             }
                         }
@@ -130,5 +139,77 @@ public class Stocks extends AppCompatActivity {
                 }
             }
         }.execute(url);
+        View.OnClickListener buttonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Получаем соответствующий TextView
+                TextView scetchikTextView = null;
+
+                if (v.getId() == R.id.buttonPlusstocks1 || v.getId() == R.id.buttonminusstocks1) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks1);
+                } else if (v.getId() == R.id.buttonPlusstocks2 || v.getId() == R.id.buttonminusstocks2) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks2);
+                } else if (v.getId() == R.id.buttonPlusstocks3 || v.getId() == R.id.buttonminusstocks3) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks3);
+                } else if (v.getId() == R.id.buttonPlusstocks4 || v.getId() == R.id.buttonminusstocks4) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks4);
+                } else if (v.getId() == R.id.buttonPlusstocks5 || v.getId() == R.id.buttonminusstocks5) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks5);
+                } else if (v.getId() == R.id.buttonPlusstocks6 || v.getId() == R.id.buttonminusstocks6) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks6);
+                }
+
+                if (scetchikTextView != null) {
+                    // Получаем текущее значение
+                    int currentValue = Integer.parseInt(scetchikTextView.getText().toString());
+
+                    // Обрабатываем "+" или "-"
+                    if (v.getId() == R.id.buttonPlusstocks1 || v.getId() == R.id.buttonPlusstocks2 || v.getId() == R.id.buttonPlusstocks3 || v.getId() == R.id.buttonPlusstocks4 || v.getId() == R.id.buttonPlusstocks5 || v.getId() == R.id.buttonPlusstocks6) {
+                        // Увеличиваем значение, если не превышает 10
+                        if (currentValue < 10) {
+                            currentValue++;
+                        }
+                    } else if (v.getId() == R.id.buttonminusstocks1 || v.getId() == R.id.buttonminusstocks2 || v.getId() == R.id.buttonminusstocks3 || v.getId() == R.id.buttonminusstocks4 || v.getId() == R.id.buttonminusstocks5 || v.getId() == R.id.buttonminusstocks6) {
+                        // Уменьшаем значение, если не отрицательное
+                        if (currentValue > 0) {
+                            currentValue--;
+                        }
+                    }
+
+                    // Устанавливаем новое значение в TextView
+                    scetchikTextView.setText(String.valueOf(currentValue));
+                }
+            }
+        };
+        Button buttonMain = findViewById(R.id.buttonmain);
+        Button buttonBin = findViewById(R.id.buttonbin);
+        Button buttonAccount = findViewById(R.id.buttonaccount);
+
+        buttonMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "главная"
+                Intent intent = new Intent(Stocks.this, Main.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonBin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "корзина"
+                Intent intent = new Intent(Stocks.this, Bin.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "аккаунт"
+                Intent intent = new Intent(Stocks.this, Account.class); //
+                startActivity(intent);
+            }
+        });
     }
 }

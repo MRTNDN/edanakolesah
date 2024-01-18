@@ -51,5 +51,8 @@
         <activity
             android:name="com.westernyey.edanakolesah.main.Bin"
             android:label="bin" />
+        <activity
+            android:name="com.westernyey.edanakolesah.main.Account"
+            android:label="account" />
     </application>
 </manifest>

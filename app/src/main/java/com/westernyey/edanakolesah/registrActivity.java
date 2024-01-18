@@ -101,7 +101,7 @@ public class registrActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        //Нужен тост, который говорит что всё успешно
+                        Toast.makeText(registrActivity.this, "Успешно!", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

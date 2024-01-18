@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greenknopka">
+
+    <!-- Верхняя часть с EditText -->
+    <Button
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Настройки профиля"
+        android:background="@drawable/button_background_krugloekoroche" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/adressbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Изменить адрес"
+        android:background="@drawable/button_background_krugloekoroche" />
+    <Button
+        android:id="@+id/oplbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Изменить способ оплаты"
+        android:background="@drawable/button_background_krugloekoroche"/>
+    <Button
+        android:id="@+id/numbertelbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="изменить номер телефона"
+        android:background="@drawable/button_background_krugloekoroche"/>
+    <Button
+        android:id="@+id/passbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Изменить пароль"
+        android:background="@drawable/button_background_krugloekoroche"/>
+    <Button
+        android:id="@+id/zakbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="История заказов"
+        android:background="@drawable/button_background_krugloekoroche"/>
+    <Button
+        android:id="@+id/promonutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Промокоды"
+        android:background="@drawable/button_background_krugloekoroche"/>
+    <Button
+        android:id="@+id/tpbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Тех.поддержка"
+        android:background="@drawable/button_background_krugloekoroche"/>
+
+
+
+
+</LinearLayout>
+    <!-- Нижняя часть с тремя кнопками -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp">
+
+        <!-- Кнопка главная -->
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/buttonmain"
+
+            android:padding="35dp"
+            android:maxHeight="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:drawableLeft="@drawable/main"
+
+            android:gravity="center"
+            />
+
+        <!-- Кнопка корзина -->
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/buttonbin"
+            android:padding="35dp"
+            android:maxHeight="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:drawableLeft="@drawable/shop" />
+
+        <!-- Кнопка аккаунт -->
+        <Button
+            android:layout_width="0dp"
+            android:padding="35dp"
+            android:maxHeight="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_background_krugloekoroche"
+            android:drawableLeft="@drawable/account1"
+            android:id="@+id/buttonaccount"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
