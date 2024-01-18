@@ -2,6 +2,7 @@ package com.westernyey.edanakolesah.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -29,6 +30,9 @@ public class Main extends AppCompatActivity {
         String value = extras.getString("key");
         button1.setText("Здравствуйте, "+value);
 
+        Bundle extras1 = getIntent().getExtras();
+        String addres = extras1.getString("keyAddress");
+
 
         // Находим RelativeLayout по его идентификатору
         RelativeLayout relativeLayout = findViewById(R.id.RELAP);
@@ -41,8 +45,7 @@ public class Main extends AppCompatActivity {
                 Intent intent = new Intent(Main.this, shopmenu.class);
 
                 // Добавляем дополнительные данные, если необходимо
-                intent.putExtra("key", "value");
-
+                intent.putExtra("keyAddress", addres);
                 // Запускаем следующую активити
                 startActivity(intent);
             }
@@ -60,7 +63,7 @@ public class Main extends AppCompatActivity {
 
                 // Добавляем дополнительные данные, если необходимо
                 intent.putExtra("key", "value");
-
+                intent.putExtra("keyAddress", addres);
                 // Запускаем следующую активити
                 startActivity(intent);
             }
@@ -78,7 +81,7 @@ public class Main extends AppCompatActivity {
 
                 // Добавляем дополнительные данные, если необходимо
                 intent.putExtra("key", "value");
-
+                intent.putExtra("keyAddress", addres);
                 // Запускаем следующую активити
                 startActivity(intent);
             }

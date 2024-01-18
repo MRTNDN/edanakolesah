@@ -21,7 +21,7 @@ import java.net.URL;
 import java.util.List;
 
 public class shopmenu extends AppCompatActivity {
-
+    String addres;
     ImageView shop1;
     ImageView shop2;
     ImageView shop3;
@@ -35,6 +35,9 @@ public class shopmenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.shopmenuw);
+
+        Bundle extras1 = getIntent().getExtras();
+        addres = extras1.getString("keyAddress");
 
         //Создание массивов
         ImageView[] images = new ImageView[]{
@@ -151,6 +154,7 @@ public class shopmenu extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(shopmenu.this, Bin.class);
+                intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
         });

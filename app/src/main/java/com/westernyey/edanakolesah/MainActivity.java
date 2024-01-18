@@ -1,24 +1,18 @@
 package com.westernyey.edanakolesah;
 
-import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.PictureDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.caverock.androidsvg.SVG;
 import com.caverock.androidsvg.SVGParseException;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,8 +21,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.westernyey.edanakolesah.main.Main;
-import com.westernyey.edanakolesah.vost.newpassActivity;
-
 import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         editText1 = findViewById(R.id.editText1);
         editText2 = findViewById(R.id.editText2);
+
 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,10 +141,13 @@ public class MainActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
 
                                 String name = document.getString("name");
+                                String address = document.getString("address");
+                                //передача данных между активити
 
-                                Intent intent = new Intent(MainActivity.this, com.westernyey.edanakolesah.main.Main.class);
+                                Intent intent = new Intent(MainActivity.this, Main.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                 intent.putExtra("key",name);
+                                intent.putExtra("keyAddress", address);
                                 startActivity(intent);
                             }
                         } else {

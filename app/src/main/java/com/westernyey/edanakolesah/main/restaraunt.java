@@ -21,6 +21,7 @@ import java.net.URL;
 import java.util.List;
 
 public class restaraunt extends AppCompatActivity {
+    String addres;
     ImageView imgRest1;ImageView imgRest2;ImageView imgRest3;ImageView imgRest4;ImageView imgRest5;ImageView imgRest6;
     TextView nazvRest1,nazvRest2,nazvRest3,nazvRest4,nazvRest5,nazvRest6, priceRest1,priceRest2,priceRest3,priceRest4,priceRest5,priceRest6;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -28,6 +29,9 @@ public class restaraunt extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restarauntw);
+
+        Bundle extras1 = getIntent().getExtras();
+        addres = extras1.getString("keyAddress");
 
         // Найдите ImageView после установки макета
         ImageView[] images = new ImageView[]{
@@ -144,6 +148,7 @@ public class restaraunt extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(restaraunt.this, Bin.class);
+                intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
         });

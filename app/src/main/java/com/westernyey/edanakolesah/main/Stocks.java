@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -26,6 +27,7 @@ import java.net.URL;
 import java.util.List;
 
 public class Stocks extends AppCompatActivity {
+    String addres;
     ImageView imgStock1;
     ImageView imgStock2;
     ImageView imgStock3;
@@ -39,6 +41,10 @@ public class Stocks extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stocks);
+
+        Bundle extras1 = getIntent().getExtras();
+        addres = extras1.getString("keyAddress");
+        Log.d("MyApp", "АОА"+addres);
 
         //Создание массива imageView
         ImageView[] images = new ImageView[]{
@@ -199,6 +205,7 @@ public class Stocks extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(Stocks.this, Bin.class);
+                intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
         });
