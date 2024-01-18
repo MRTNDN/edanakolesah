@@ -20,7 +20,7 @@ public class Bin extends AppCompatActivity {
     String[] valuesInDB;
     String[] product = new String[0];
     ArrayAdapter<String> adapter;
-
+    String kolvo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,7 @@ public class Bin extends AppCompatActivity {
                         List<DocumentSnapshot> documents = task.getResult().getDocuments();
                         for (DocumentSnapshot doc : documents) {
                             String idProduct = doc.getString("id_product"); // Получаем значение поля "id_product"
+                            kolvo = doc.getString("product_quantity");
                             data = idProduct;
 
                         }
@@ -50,8 +51,12 @@ public class Bin extends AppCompatActivity {
                             listView.setAdapter(adapterNull);
                         } else {
                             valuesInDB = data.split(" ");
+                            String[] arrKol = kolvo.split(" ");
+                            int ind = -1;
                             for (String value : valuesInDB) {
+                                ind++;
                                 CollectionReference colRef2 = db.collection("product");
+                                int finalInd = ind;
                                 colRef2
                                         .whereEqualTo("id_product", value)
                                         .get()
@@ -59,14 +64,17 @@ public class Bin extends AppCompatActivity {
                                             if (task1.isSuccessful()) {
                                                 List<DocumentSnapshot> documents1 = task1.getResult().getDocuments();
                                                 for (DocumentSnapshot doc : documents1) {
-                                                    String nazvProduct = doc.getString("name_product"); // Получаем значение поля "id_product"
+                                                    String nazvProduct = doc.getString("name_product");
+
                                                     product = Arrays.copyOf(product, product.length + 1);
-                                                    product[product.length - 1] = nazvProduct;
+
+                                                    product[product.length - 1] = nazvProduct + "                    " + arrKol[finalInd];
                                                 }
                                                 adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, product);
                                                 ListView listView = findViewById(R.id.listView); // Замените "listView" на ваш идентификатор ListView
                                                 // Установка адаптера для ListView
                                                 listView.setAdapter(adapter);
+
                                             }
                                         });
                             }

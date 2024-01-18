@@ -44,7 +44,7 @@ public class Stocks extends AppCompatActivity {
 
         Bundle extras1 = getIntent().getExtras();
         addres = extras1.getString("keyAddress");
-        Log.d("MyApp", "АОА"+addres);
+
 
         //Создание массива imageView
         ImageView[] images = new ImageView[]{
