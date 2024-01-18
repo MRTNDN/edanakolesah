@@ -71,8 +71,7 @@ public class Bin extends AppCompatActivity {
                                                     product[product.length - 1] = nazvProduct + "                    " + arrKol[finalInd];
                                                 }
                                                 adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, product);
-                                                ListView listView = findViewById(R.id.listView); // Замените "listView" на ваш идентификатор ListView
-                                                // Установка адаптера для ListView
+                                                ListView listView = findViewById(R.id.listView);
                                                 listView.setAdapter(adapter);
 
                                             }

@@ -18,6 +18,8 @@ public class Account extends AppCompatActivity {
         Button buttonBin = findViewById(R.id.buttonbin);
         Button buttonAccount = findViewById(R.id.buttonaccount);
         Button tpbutton = findViewById(R.id.tpbutton);
+        Button promonutton = findViewById(R.id.promonutton);
+        Button history = findViewById(R.id.zakbutton);
         buttonMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,8 +31,24 @@ public class Account extends AppCompatActivity {
         tpbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Обработчик для кнопки "главная"
+                // Обработчик для кнопки "помощь"
                 Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.main.nastacc.Support.class);
+                startActivity(intent);
+            }
+        });
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "история"
+                Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.main.nastacc.Historyzk.class);
+                startActivity(intent);
+            }
+        });
+        promonutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "промокод"
+                Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.main.nastacc.Promocod.class);
                 startActivity(intent);
             }
         });
@@ -52,5 +70,6 @@ public class Account extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }

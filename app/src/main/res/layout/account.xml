@@ -82,18 +82,20 @@
         android:layout_marginBottom="16dp"
         android:hint="История заказов"
         android:background="@drawable/button_background_krugloekoroche"/>
+
     <Button
         android:id="@+id/promonutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:minHeight="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/button_background_krugloekoroche"
+        android:gravity="center"
         android:hint="Промокоды"
-        android:background="@drawable/button_background_krugloekoroche"/>
+        android:minHeight="38dp" />
+
     <Button
         android:id="@+id/tpbutton"
         android:layout_width="match_parent"

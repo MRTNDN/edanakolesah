@@ -73,7 +73,48 @@ public class Stocks extends AppCompatActivity {
                 priceStock5 = findViewById(R.id.pricestock5),
                 priceStock6 = findViewById(R.id.pricestock6)
         };
+        View.OnClickListener buttonClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Получаем соответствующий TextView
+                TextView scetchikTextView = null;
 
+                if (v.getId() == R.id.buttonPlusstocks1 || v.getId() == R.id.buttonminusstocks1) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks1);
+                } else if (v.getId() == R.id.buttonPlusstocks2 || v.getId() == R.id.buttonminusstocks2) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks2);
+                } else if (v.getId() == R.id.buttonPlusstocks3 || v.getId() == R.id.buttonminusstocks3) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks3);
+                } else if (v.getId() == R.id.buttonPlusstocks4 || v.getId() == R.id.buttonminusstocks4) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks4);
+                } else if (v.getId() == R.id.buttonPlusstocks5 || v.getId() == R.id.buttonminusstocks5) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks5);
+                } else if (v.getId() == R.id.buttonPlusstocks6 || v.getId() == R.id.buttonminusstocks6) {
+                    scetchikTextView = findViewById(R.id.scetchikstocks6);
+                }
+
+                if (scetchikTextView != null) {
+                    // Получаем текущее значение
+                    int currentValue = Integer.parseInt(scetchikTextView.getText().toString());
+
+                    // Обрабатываем "+" или "-"
+                    if (v.getId() == R.id.buttonPlusstocks1 || v.getId() == R.id.buttonPlusstocks2 || v.getId() == R.id.buttonPlusstocks3 || v.getId() == R.id.buttonPlusstocks4 || v.getId() == R.id.buttonPlusstocks5 || v.getId() == R.id.buttonPlusstocks6) {
+                        // Увеличиваем значение, если не превышает 10
+                        if (currentValue < 10) {
+                            currentValue++;
+                        }
+                    } else if (v.getId() == R.id.buttonminusstocks1 || v.getId() == R.id.buttonminusstocks2 || v.getId() == R.id.buttonminusstocks3 || v.getId() == R.id.buttonminusstocks4 || v.getId() == R.id.buttonminusstocks5 || v.getId() == R.id.buttonminusstocks6) {
+                        // Уменьшаем значение, если не отрицательное
+                        if (currentValue > 0) {
+                            currentValue--;
+                        }
+                    }
+
+                    // Устанавливаем новое значение в TextView
+                    scetchikTextView.setText(String.valueOf(currentValue));
+                }
+            }
+        };
         //Парсинг изображения из бд для конкретного окна
         for (int i = 1; i < 7; i++) {
             int num = i;
@@ -145,48 +186,7 @@ public class Stocks extends AppCompatActivity {
                 }
             }
         }.execute(url);
-        View.OnClickListener buttonClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Получаем соответствующий TextView
-                TextView scetchikTextView = null;
 
-                if (v.getId() == R.id.buttonPlusstocks1 || v.getId() == R.id.buttonminusstocks1) {
-                    scetchikTextView = findViewById(R.id.scetchikstocks1);
-                } else if (v.getId() == R.id.buttonPlusstocks2 || v.getId() == R.id.buttonminusstocks2) {
-                    scetchikTextView = findViewById(R.id.scetchikstocks2);
-                } else if (v.getId() == R.id.buttonPlusstocks3 || v.getId() == R.id.buttonminusstocks3) {
-                    scetchikTextView = findViewById(R.id.scetchikstocks3);
-                } else if (v.getId() == R.id.buttonPlusstocks4 || v.getId() == R.id.buttonminusstocks4) {
-                    scetchikTextView = findViewById(R.id.scetchikstocks4);
-                } else if (v.getId() == R.id.buttonPlusstocks5 || v.getId() == R.id.buttonminusstocks5) {
-                    scetchikTextView = findViewById(R.id.scetchikstocks5);
-                } else if (v.getId() == R.id.buttonPlusstocks6 || v.getId() == R.id.buttonminusstocks6) {
-                    scetchikTextView = findViewById(R.id.scetchikstocks6);
-                }
-
-                if (scetchikTextView != null) {
-                    // Получаем текущее значение
-                    int currentValue = Integer.parseInt(scetchikTextView.getText().toString());
-
-                    // Обрабатываем "+" или "-"
-                    if (v.getId() == R.id.buttonPlusstocks1 || v.getId() == R.id.buttonPlusstocks2 || v.getId() == R.id.buttonPlusstocks3 || v.getId() == R.id.buttonPlusstocks4 || v.getId() == R.id.buttonPlusstocks5 || v.getId() == R.id.buttonPlusstocks6) {
-                        // Увеличиваем значение, если не превышает 10
-                        if (currentValue < 10) {
-                            currentValue++;
-                        }
-                    } else if (v.getId() == R.id.buttonminusstocks1 || v.getId() == R.id.buttonminusstocks2 || v.getId() == R.id.buttonminusstocks3 || v.getId() == R.id.buttonminusstocks4 || v.getId() == R.id.buttonminusstocks5 || v.getId() == R.id.buttonminusstocks6) {
-                        // Уменьшаем значение, если не отрицательное
-                        if (currentValue > 0) {
-                            currentValue--;
-                        }
-                    }
-
-                    // Устанавливаем новое значение в TextView
-                    scetchikTextView.setText(String.valueOf(currentValue));
-                }
-            }
-        };
         Button buttonMain = findViewById(R.id.buttonmain);
         Button buttonBin = findViewById(R.id.buttonbin);
         Button buttonAccount = findViewById(R.id.buttonaccount);
