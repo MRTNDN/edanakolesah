@@ -181,7 +181,7 @@ public class Stocks extends AppCompatActivity {
         });
     }
 
-        public void onClickPlusOrMinus(View v) {
+        public void onClickPlusOrMinusStock(View v) {
             // Получаем соответствующий TextView
             TextView scetchikTextView = null;
 

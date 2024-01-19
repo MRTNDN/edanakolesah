@@ -75,6 +75,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/priceshop1"
                     android:id="@+id/buttonPlusshop1"
@@ -97,6 +98,7 @@
 
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusshop1"
                     android:layout_height="wrap_content"
@@ -140,6 +142,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:id="@+id/buttonPlusshop2"
                     android:layout_width="80dp"
                     android:background="@drawable/button_background_krugloekoroche"
@@ -161,6 +164,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusshop2"
                     android:layout_height="wrap_content"
@@ -203,6 +207,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/priceshop3"
@@ -224,6 +229,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:id="@+id/buttonminusshop3"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -265,6 +271,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_background_krugloekoroche"
@@ -286,6 +293,7 @@
 
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusshop4"
                     android:layout_height="wrap_content"
@@ -328,6 +336,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/priceshop5"
@@ -348,6 +357,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusshop5"
                     android:layout_height="wrap_content"
@@ -389,6 +399,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/priceshop6"
@@ -409,6 +420,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusShop"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusshop6"
                     android:layout_height="wrap_content"

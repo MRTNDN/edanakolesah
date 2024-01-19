@@ -165,7 +165,7 @@ public class restaraunt extends AppCompatActivity {
             }
         });
     }
-        public void onClickPlusOrMinus(View v) {
+        public void onClickPlusOrMinusRest(View v) {
             // Получаем соответствующий TextView
             TextView scetchikTextView = null;
 
