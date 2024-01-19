@@ -58,7 +58,7 @@ public class Bin extends AppCompatActivity {
                             kolvo = doc.getString("product_quantity");
                             data = idProduct;
                         }
-                        if (data == null) {
+                        if (data == "") {
                             String[] nullAdapter = new String[]{"Пока что тут пусто!"};
                             ArrayAdapter<String> adapterNull = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, nullAdapter);
                             ListView listView = findViewById(R.id.listView);
