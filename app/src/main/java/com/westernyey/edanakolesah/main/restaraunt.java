@@ -36,6 +36,7 @@ import java.util.Random;
 public class restaraunt extends AppCompatActivity {
     private String kol = "";
     private String id_prod = "";
+    String numberOrder;
     String addres;
     ImageView imgRest1;ImageView imgRest2;ImageView imgRest3;ImageView imgRest4;ImageView imgRest5;ImageView imgRest6;
     TextView nazvRest1,nazvRest2,nazvRest3,nazvRest4,nazvRest5,nazvRest6, priceRest1,priceRest2,priceRest3,priceRest4,priceRest5,priceRest6;
@@ -166,6 +167,7 @@ public class restaraunt extends AppCompatActivity {
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(restaraunt.this, Bin.class);
                 intent.putExtra("keyAddress", addres);
+                intent.putExtra("number", numberOrder);
                 startActivity(intent);
             }
         });
@@ -264,12 +266,12 @@ public class restaraunt extends AppCompatActivity {
 
 
         Random rand = new Random();
-        int randomNumber = rand.nextInt(10000 - 100 + 1) + 100;
+        numberOrder = String.valueOf((rand.nextInt(10000 - 100 + 1) + 100));
         Map<String, Object> cart = new HashMap<>();
         cart.put("address", addres);
         cart.put("id_payment_method", "0");
         cart.put("id_product", id_prod);
-        cart.put("order_number", randomNumber);
+        cart.put("order_number", numberOrder);
         cart.put("product_quantity", kol);
 
         db.collection("shopping_cart")

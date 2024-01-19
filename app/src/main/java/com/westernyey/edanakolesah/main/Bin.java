@@ -9,10 +9,18 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.westernyey.edanakolesah.R;
 
 import java.util.Arrays;
@@ -20,6 +28,7 @@ import java.util.List;
 
 public class Bin extends AppCompatActivity {
     String addres;
+    String numberOfOrder;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     String data = null;
     String[] valuesInDB;
@@ -35,10 +44,11 @@ public class Bin extends AppCompatActivity {
         Button buttonAccount = findViewById(R.id.buttonMain);
         Bundle extras1 = getIntent().getExtras();
         addres = extras1.getString("keyAddress");
-
+        numberOfOrder = extras1.getString("number");
         CollectionReference colRef = db.collection("shopping_cart");
         colRef
                 .whereEqualTo("address", addres)
+                .whereEqualTo("order_number", numberOfOrder)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -115,5 +125,25 @@ public class Bin extends AppCompatActivity {
         });
     }
 
+    public void deleteDoc(View v){
+        FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
+        CollectionReference itemsRef = rootRef.collection("shopping_cart");
+        Query query = itemsRef.whereEqualTo("address", addres);
+        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (DocumentSnapshot document : task.getResult()) {
+                        itemsRef.document(document.getId()).delete();
+                    }
+                } else {
+                    Log.d("Myapp", "Error getting documents: ", task.getException());
+                }
+            }
+        });
+        Intent intent = new Intent(Bin.this, Main.class);
+        startActivity(intent);
     }
+
+}
 
