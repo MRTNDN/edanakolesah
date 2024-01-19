@@ -13,23 +13,35 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.westernyey.edanakolesah.R;
+import com.westernyey.edanakolesah.registrActivity;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class Stocks extends AppCompatActivity {
     String addres;
+    private String kol="";
+    private String id_prod = "";
     ImageView imgStock1;
     ImageView imgStock2;
     ImageView imgStock3;
@@ -164,6 +176,7 @@ public class Stocks extends AppCompatActivity {
         buttonBin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                addToCart();
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(Stocks.this, Bin.class);
                 intent.putExtra("keyAddress", addres);
@@ -219,5 +232,74 @@ public class Stocks extends AppCompatActivity {
                 // Устанавливаем новое значение в TextView
                 scetchikTextView.setText(String.valueOf(currentValue));
             }
+        }
+
+        public void addToCart(){
+
+        TextView scetchikTextView1, scetchikTextView2, scetchikTextView3, scetchikTextView4,scetchikTextView5,scetchikTextView6;
+            TextView[] scet = new TextView[]{
+                    scetchikTextView1 = findViewById(R.id.scetchikstocks1),
+                    scetchikTextView2 = findViewById(R.id.scetchikstocks2),
+                    scetchikTextView3 = findViewById(R.id.scetchikstocks3),
+                    scetchikTextView4 = findViewById(R.id.scetchikstocks4),
+                    scetchikTextView5 = findViewById(R.id.scetchikstocks5),
+                    scetchikTextView6 = findViewById(R.id.scetchikstocks6)
+            };
+
+            for (TextView textView : scet) {
+                String text = textView.getText().toString(); // получаем текст из TextView
+                if (!text.equals("0")) { // проверяем, равен ли текст "0"
+                    if (R.id.scetchikstocks1 == textView.getId()){
+                      id_prod += "1 ";
+                      kol += text + " ";
+                    } else if (R.id.scetchikstocks2 == textView.getId()) {
+                        id_prod += "2 ";
+                        kol += text + " ";
+                    } else if (R.id.scetchikstocks3 == textView.getId()) {
+                        id_prod += "3 ";
+                        kol += text + " ";
+                    } else if (R.id.scetchikstocks4 == textView.getId()) {
+                        id_prod += "4 ";
+                        kol += text + " ";
+                    } else if (R.id.scetchikstocks5 == textView.getId()) {
+                        id_prod += "5 ";
+                        kol += text + " ";
+                    }else{
+                        id_prod += "6 ";
+                        kol += text + " ";
+                    }
+
+                }
+
+            }
+            addToDB();
+        }
+
+        public void addToDB(){
+
+
+            Random rand = new Random();
+            int randomNumber = rand.nextInt(10000 - 100 + 1) + 100;
+            Map<String, Object> cart = new HashMap<>();
+            cart.put("address", addres);
+            cart.put("id_payment_method", "0");
+            cart.put("id_product", id_prod);
+            cart.put("order_number", randomNumber);
+            cart.put("product_quantity", kol);
+
+            db.collection("shopping_cart")
+                    .add(cart)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Toast.makeText(Stocks.this, "Товары добавлены в корзину!", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(Stocks.this, "Ошибка сервера!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
         }
 }

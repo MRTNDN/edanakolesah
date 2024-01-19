@@ -10,18 +10,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.westernyey.edanakolesah.R;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 public class shopmenu extends AppCompatActivity {
     String addres;
+    private String kol="";
+    private String id_prod = "";
     ImageView shop1;
     ImageView shop2;
     ImageView shop3;
@@ -152,6 +164,7 @@ public class shopmenu extends AppCompatActivity {
         buttonBin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                addToCart();
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(shopmenu.this, Bin.class);
                 intent.putExtra("keyAddress", addres);
@@ -207,4 +220,73 @@ public class shopmenu extends AppCompatActivity {
                 scetchikTextView.setText(String.valueOf(currentValue));
             }
         }
+
+    public void addToCart(){
+
+        TextView scetchikTextView1, scetchikTextView2, scetchikTextView3, scetchikTextView4,scetchikTextView5,scetchikTextView6;
+        TextView[] scet = new TextView[]{
+                scetchikTextView1 = findViewById(R.id.scetchikshop1),
+                scetchikTextView2 = findViewById(R.id.scetchikshop2),
+                scetchikTextView3 = findViewById(R.id.scetchikshop3),
+                scetchikTextView4 = findViewById(R.id.scetchikshop4),
+                scetchikTextView5 = findViewById(R.id.scetchikshop5),
+                scetchikTextView6 = findViewById(R.id.scetchikshop6)
+        };
+
+        for (TextView textView : scet) {
+            String text = textView.getText().toString(); // получаем текст из TextView
+            if (!text.equals("0")) { // проверяем, равен ли текст "0"
+                if (R.id.scetchikshop1 == textView.getId()){
+                    id_prod += "7 ";
+                    kol += text + " ";
+                } else if (R.id.scetchikshop2 == textView.getId()) {
+                    id_prod += "8 ";
+                    kol += text + " ";
+                } else if (R.id.scetchikshop3 == textView.getId()) {
+                    id_prod += "9 ";
+                    kol += text + " ";
+                } else if (R.id.scetchikshop4 == textView.getId()) {
+                    id_prod += "10 ";
+                    kol += text + " ";
+                } else if (R.id.scetchikshop5 == textView.getId()) {
+                    id_prod += "11 ";
+                    kol += text + " ";
+                }else{
+                    id_prod += "12 ";
+                    kol += text + " ";
+                }
+
+            }
+
+        }
+        addToDB();
+    }
+
+    public void addToDB(){
+
+
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(10000 - 100 + 1) + 100;
+        Map<String, Object> cart = new HashMap<>();
+        cart.put("address", addres);
+        cart.put("id_payment_method", "0");
+        cart.put("id_product", id_prod);
+        cart.put("order_number", randomNumber);
+        cart.put("product_quantity", kol);
+
+        db.collection("shopping_cart")
+                .add(cart)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(shopmenu.this, "Товары добавлены в корзину!", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(shopmenu.this, "Ошибка сервера!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
     }
