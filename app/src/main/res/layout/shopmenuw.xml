@@ -28,10 +28,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         <GridLayout
+            android:layout_marginTop="0dp"
             android:layout_width="match_parent"
             android:layout_height="700dp"
             android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="0dp"
             android:background="@drawable/fone_background1"
@@ -44,6 +44,7 @@
             <!-- Ячейка 1 -->
             <RelativeLayout
                 android:layout_width="180dp"
+                android:layout_marginTop="30dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="8dp">
@@ -72,47 +73,55 @@
                     android:id="@+id/priceshop1"
                     android:gravity="center"
                     android:text="Текст2" />
-
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceshop1">
                 <!-- Кнопка "+" -->
                 <Button
                     android:onClick="onClickPlusOrMinusShop"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/priceshop1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/buttonPlusshop1"
-                    android:layout_width="80dp"
                     android:background="@drawable/button_background_krugloekoroche"
-                    android:text="+" />
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                     />
                 <!-- счетчик -->
                 <TextView
                     android:id="@+id/scetchikshop1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/priceshop1"
                     android:layout_toRightOf="@id/buttonPlusshop1"
-                    android:background="@drawable/button_background_krugloekoroche"
+                    android:layout_toLeftOf="@id/buttonminusshop1"
                     android:minWidth="20dp"
                     android:minHeight="48dp"
+                    android:background="@drawable/button_background_krugloekoroche"
                     android:text="0"
                     android:textSize="24dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    />
 
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
-                    android:layout_width="80dp"
                     android:id="@+id/buttonminusshop1"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/priceshop1"
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="40dp"
                     android:background="@drawable/button_background_krugloekoroche"
-                    android:layout_toRightOf="@id/scetchikshop1"
-                    android:text="-" />
-
+                    android:text="-"
+                    android:layout_marginLeft="8dp"
+                     />
+            </RelativeLayout>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginTop="30dp"
                 android:layout_margin="8dp">
 
                 <!-- Изображение -->
@@ -139,40 +148,47 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/nazvshop2"
                     android:text="Текст2" />
-
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceshop2">
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
                     android:id="@+id/buttonPlusshop2"
-                    android:layout_width="80dp"
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/button_background_krugloekoroche"
-                    android:layout_height="wrap_content"
-
-                    android:layout_below="@+id/priceshop2"
-                    android:text="+" />
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                    />
                 <TextView
                     android:id="@+id/scetchikshop2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/priceshop2"
                     android:layout_toRightOf="@id/buttonPlusshop2"
-                    android:background="@drawable/button_background_krugloekoroche"
+                    android:layout_toLeftOf="@id/buttonminusshop2"
                     android:minWidth="20dp"
                     android:minHeight="48dp"
+                    android:background="@drawable/button_background_krugloekoroche"
                     android:text="0"
                     android:textSize="24dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                   />
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
-                    android:layout_width="80dp"
-                    android:id="@+id/buttonminusshop2"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/priceshop2"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:layout_toRightOf="@id/scetchikshop2"
-                    android:text="-" />
 
+                    android:id="@+id/buttonminusshop2"
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_background_krugloekoroche"
+                    android:text="-"
+                    android:layout_marginLeft="8dp"
+                     />
+            </RelativeLayout>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="180dp"
@@ -204,39 +220,45 @@
                     android:id="@+id/priceshop3"
                     android:gravity="center"
                     android:text="Текст2" />
-
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceshop3">
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/priceshop3"
-                    android:background="@drawable/button_background_krugloekoroche"
                     android:id="@+id/buttonPlusshop3"
-
-                    android:text="+" />
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_background_krugloekoroche"
+                    android:text="+"
+                    android:layout_marginRight="8dp" />
                 <TextView
                     android:id="@+id/scetchikshop3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/priceshop3"
                     android:layout_toRightOf="@id/buttonPlusshop3"
-                    android:background="@drawable/button_background_krugloekoroche"
+                    android:layout_toLeftOf="@id/buttonminusshop3"
                     android:minWidth="20dp"
                     android:minHeight="48dp"
+                    android:background="@drawable/button_background_krugloekoroche"
                     android:text="0"
                     android:textSize="24dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    />
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
                     android:id="@+id/buttonminusshop3"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="40dp"
                     android:background="@drawable/button_background_krugloekoroche"
-                    android:layout_below="@id/priceshop3"
-                    android:layout_toRightOf="@id/scetchikshop3"
-                    android:text="-" />
+                    android:text="-"
+                    android:layout_marginLeft="8dp"
+                    />
+            </RelativeLayout>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="180dp"
@@ -268,40 +290,47 @@
                     android:id="@+id/priceshop4"
                     android:gravity="center"
                     android:text="Текст2" />
-
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceshop4">
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:layout_below="@+id/priceshop4"
+
                     android:id="@+id/buttonPlusshop4"
-                    android:text="+" />
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_background_krugloekoroche"
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                    />
+
                 <TextView
                     android:id="@+id/scetchikshop4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/priceshop4"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@id/buttonminusshop4"
                     android:layout_toRightOf="@id/buttonPlusshop4"
                     android:background="@drawable/button_background_krugloekoroche"
+                    android:gravity="center"
                     android:minWidth="20dp"
                     android:minHeight="48dp"
                     android:text="0"
-                    android:textSize="24dp"
-                    android:gravity="center"/>
+                    android:textSize="24dp" />
 
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
-                    android:layout_width="80dp"
                     android:id="@+id/buttonminusshop4"
-                    android:layout_height="wrap_content"
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="40dp"
                     android:background="@drawable/button_background_krugloekoroche"
-                    android:layout_below="@id/priceshop4"
-                    android:layout_toRightOf="@id/scetchikshop4"
-                    android:text="-" />
-
+                    android:text="-"
+                    android:layout_marginLeft="8dp" />
+            </RelativeLayout>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="180dp"
@@ -333,38 +362,48 @@
                     android:gravity="center"
                     android:id="@+id/priceshop5"
                     android:text="Текст2" />
-
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceshop5">
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/priceshop5"
-                    android:background="@drawable/button_background_krugloekoroche"
+
                     android:id="@+id/buttonPlusshop5"
-                    android:text="+" />
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_background_krugloekoroche"
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                     />
                 <TextView
                     android:id="@+id/scetchikshop5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/priceshop5"
                     android:layout_toRightOf="@id/buttonPlusshop5"
-                    android:background="@drawable/button_background_krugloekoroche"
+                    android:layout_toLeftOf="@id/buttonminusshop5"
                     android:minWidth="20dp"
                     android:minHeight="48dp"
+                    android:background="@drawable/button_background_krugloekoroche"
                     android:text="0"
                     android:textSize="24dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    />
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
-                    android:layout_width="80dp"
+
                     android:id="@+id/buttonminusshop5"
-                    android:layout_height="wrap_content"
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="40dp"
                     android:background="@drawable/button_background_krugloekoroche"
-                    android:layout_below="@id/priceshop5"
-                    android:layout_toRightOf="@id/scetchikshop5"
-                    android:text="-" />
+                    android:text="-"
+                    android:layout_marginLeft="8dp"
+                    />
+            </RelativeLayout>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="180dp"
@@ -396,38 +435,47 @@
                     android:gravity="center"
                     android:id="@+id/priceshop6"
                     android:text="Текст2" />
-
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceshop6">
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinusShop"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/priceshop6"
-                    android:background="@drawable/button_background_krugloekoroche"
+
                     android:id="@+id/buttonPlusshop6"
-                    android:text="+" />
+                    android:onClick="onClickPlusOrMinusShop"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/button_background_krugloekoroche"
+                    android:text="+"
+                    android:layout_marginRight="8dp"
+                     />
                 <TextView
                     android:id="@+id/scetchikshop6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/priceshop6"
                     android:layout_toRightOf="@id/buttonPlusshop6"
-                    android:background="@drawable/button_background_krugloekoroche"
+                    android:layout_toLeftOf="@id/buttonminusshop6"
                     android:minWidth="20dp"
                     android:minHeight="48dp"
+                    android:background="@drawable/button_background_krugloekoroche"
                     android:text="0"
                     android:textSize="24dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    />
                 <!-- Кнопка "-" -->
                 <Button
                     android:onClick="onClickPlusOrMinusShop"
-                    android:layout_width="80dp"
-                    android:id="@+id/buttonminusshop6"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/priceshop6"
+                    android:layout_width="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="40dp"
                     android:background="@drawable/button_background_krugloekoroche"
-                    android:layout_toRightOf="@+id/scetchikshop6"
-                    android:text="-" />
+                    android:text="-"
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/buttonminusshop6"
+                     />
+            </RelativeLayout>
             </RelativeLayout>
         </GridLayout>
 

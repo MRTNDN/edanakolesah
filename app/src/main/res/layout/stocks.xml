@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -28,405 +29,452 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="700dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
-            android:background="@drawable/fone_background1"
-            android:columnCount="2"
-            android:rowCount="3"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="700dp"
+                android:background="@drawable/fone_background1"
+                android:columnCount="2"
+                android:rowCount="3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <!-- Ячейка 1 -->
-            <RelativeLayout
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="8dp">
-
-                <!-- Изображение -->
-                <ImageView
-                    android:id="@+id/stockprod1"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                     />
-
-                <!-- Текст1 -->
-                <TextView
-                    android:gravity="center"
-                    android:layout_width="match_parent"
+                <!-- Ячейка 1 -->
+                <RelativeLayout
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/stockprod1"
-                    android:id="@+id/nazvstock1"
-                    android:text="Текст1" />
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1">
 
-                <!-- Текст2 -->
-                <TextView
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nazvstock1"
-                    android:id="@+id/pricestock1"
-                    android:text="Текст2" />
+                    <!-- Изображение -->
+                    <ImageView
+                        android:id="@+id/stockprod1"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
 
-                <!-- Кнопка "+" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/pricestock1"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:id="@+id/buttonPlusstocks1"
-                    android:text="+" />
-                <TextView
-                    android:id="@+id/scetchikstocks1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock1"
-                    android:layout_toRightOf="@id/buttonPlusstocks1"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:minWidth="20dp"
-                    android:minHeight="48dp"
-                    android:text="0"
-                    android:textSize="24dp"
-                    android:gravity="center"/>
-                <!-- Кнопка "-" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:id="@+id/buttonminusstocks1"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock1"
-                    android:layout_toRightOf="@id/scetchikstocks1"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:text="-" />
+                    <!-- Текст1 -->
+                    <TextView
+                        android:id="@+id/nazvstock1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/stockprod1"
+                        android:gravity="center"
+                        android:text="Текст1" />
 
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="8dp">
-
-                <!-- Изображение -->
-                <ImageView
-                    android:id="@+id/stockprod2"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                     />
-
-                <!-- Текст1 -->
-                <TextView
-                    android:id="@+id/nazvstock2"
-                    android:gravity="center"
+                    <!-- Текст2 -->
+                    <TextView
+                        android:id="@+id/pricestock1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nazvstock1"
+                        android:gravity="center"
+                        android:text="Текст2" />
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/stockprod2"
-                    android:text="Текст1" />
+                    android:layout_below="@+id/pricestock1">
+                    <!-- Кнопка "+" -->
+                    <Button
+                        android:id="@+id/buttonPlusstocks1"
+                        android:background="@drawable/button_background_krugloekoroche"
+                        android:text="+"
+                        android:layout_marginRight="8dp"
+                        android:onClick="onClickPlusOrMinusStock"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                         />
 
-                <!-- Текст2 -->
-                <TextView
-                    android:id="@+id/pricestock2"
-                    android:gravity="center"
+                    <TextView
+                        android:id="@+id/scetchikstocks1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/buttonPlusstocks1"
+                        android:layout_toLeftOf="@id/buttonminusstocks1"
+                        android:minWidth="20dp"
+                        android:minHeight="48dp"
+                        android:background="@drawable/button_background_krugloekoroche"
+                        android:text="0"
+                        android:textSize="24dp"
+                        android:gravity="center"
+                        android:layout_centerInParent="true"
+                        />
+                    <!-- Кнопка "-" -->
+                    <Button
+                        android:id="@+id/buttonminusstocks1"
+                        android:onClick="onClickPlusOrMinusStock"
+                        android:layout_width="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_background_krugloekoroche"
+                        android:text="-"
+                        android:layout_marginLeft="8dp" />
+                </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1">
+
+                    <!-- Изображение -->
+                    <ImageView
+                        android:id="@+id/stockprod2"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
+
+                    <!-- Текст1 -->
+                    <TextView
+                        android:id="@+id/nazvstock2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/stockprod2"
+                        android:gravity="center"
+                        android:text="Текст1" />
+
+                    <!-- Текст2 -->
+                    <TextView
+                        android:id="@+id/pricestock2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nazvstock2"
+                        android:gravity="center"
+                        android:text="Текст2" />
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/nazvstock2"
-                    android:text="Текст2" />
+                    android:layout_below="@+id/pricestock2">
+                    <!-- Кнопка "+" -->
+                    <Button
+                        android:id="@+id/buttonPlusstocks2"
+                        android:background="@drawable/button_background_krugloekoroche"
+                        android:text="+"
+                        android:layout_marginRight="8dp"
+                        android:onClick="onClickPlusOrMinusStock"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        />
 
-                <!-- Кнопка "+" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:id="@+id/buttonPlusstocks2"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/pricestock2"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:text="+" />
-                <TextView
-                    android:id="@+id/scetchikstocks2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock2"
-                    android:layout_toRightOf="@id/buttonPlusstocks2"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:minWidth="20dp"
-                    android:minHeight="48dp"
-                    android:text="0"
-                    android:textSize="24dp"
-                    android:gravity="center"/>
-                <!-- Кнопка "-" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:id="@+id/buttonminusstocks2"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock2"
-                    android:layout_toRightOf="@id/scetchikstocks2"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:text="-" />
+                    <TextView
+                        android:id="@+id/scetchikstocks2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/buttonPlusstocks2"
+                        android:layout_toLeftOf="@id/buttonminusstocks2"
+                        android:minWidth="20dp"
+                        android:minHeight="48dp"
+                        android:background="@drawable/button_background_krugloekoroche"
+                        android:text="0"
+                        android:textSize="24dp"
+                        android:gravity="center"
+                        android:layout_centerInParent="true"
+                        />
+                    <!-- Кнопка "-" -->
+                    <Button
+                        android:id="@+id/buttonminusstocks2"
+                        android:onClick="onClickPlusOrMinusStock"
+                        android:layout_width="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="40dp"
+                        android:background="@drawable/button_background_krugloekoroche"
+                        android:text="-"
+                        android:layout_marginLeft="8dp" />
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="8dp">
+                </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1">
 
-                <!-- Изображение -->
-                <ImageView
-                    android:id="@+id/stockprod3"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    />
+                    <!-- Изображение -->
+                    <ImageView
+                        android:id="@+id/stockprod3"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
 
-                <!-- Текст1 -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/stockprod3"
-                    android:id="@+id/nazvstock3"
-                    android:text="Текст1" />
+                    <!-- Текст1 -->
+                    <TextView
+                        android:id="@+id/nazvstock3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/stockprod3"
+                        android:gravity="center"
+                        android:text="Текст1" />
 
-                <!-- Текст2 -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:gravity="center"
+                    <!-- Текст2 -->
+                    <TextView
+                        android:id="@+id/pricestock3"
+                        android:layout_width="match_parent"
 
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nazvstock3"
-                    android:id="@+id/pricestock3"
-                    android:text="Текст2" />
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nazvstock3"
+                        android:gravity="center"
+                        android:text="Текст2" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pricestock3">
+                        <!-- Кнопка "+" -->
+                        <Button
+                            android:id="@+id/buttonPlusstocks3"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="+"
+                            android:layout_marginRight="8dp"
+                            android:onClick="onClickPlusOrMinusStock"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            />
 
-                <!-- Кнопка "+" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/pricestock3"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:id="@+id/buttonPlusstocks3"
-                    android:text="+" />
-                <TextView
-                    android:id="@+id/scetchikstocks3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock3"
-                    android:layout_toRightOf="@id/buttonPlusstocks3"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:minWidth="20dp"
-                    android:minHeight="48dp"
-                    android:text="0"
-                    android:textSize="24dp"
-                    android:gravity="center"/>
-                <!-- Кнопка "-" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:id="@+id/buttonminusstocks3"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock3"
-                    android:layout_toRightOf="@id/scetchikstocks3"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:text="-" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="8dp">
+                        <TextView
+                            android:id="@+id/scetchikstocks3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/buttonPlusstocks3"
+                            android:layout_toLeftOf="@id/buttonminusstocks3"
+                            android:minWidth="20dp"
+                            android:minHeight="48dp"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="0"
+                            android:textSize="24dp"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            />
+                        <!-- Кнопка "-" -->
+                        <Button
+                            android:id="@+id/buttonminusstocks3"
+                            android:onClick="onClickPlusOrMinusStock"
+                            android:layout_width="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="-"
+                            android:layout_marginLeft="8dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
 
-                <!-- Изображение -->
-                <ImageView
-                    android:id="@+id/stockprod4"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                     />
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1">
 
-                <!-- Текст1 -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/stockprod4"
-                    android:id="@+id/nazvstock4"
-                    android:text="Текст1" />
+                    <!-- Изображение -->
+                    <ImageView
+                        android:id="@+id/stockprod4"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
 
-                <!-- Текст2 -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nazvstock4"
-                    android:id="@+id/pricestock4"
-                    android:text="Текст2" />
+                    <!-- Текст1 -->
+                    <TextView
+                        android:id="@+id/nazvstock4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/stockprod4"
+                        android:gravity="center"
+                        android:text="Текст1" />
 
-                <!-- Кнопка "+" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/pricestock4"
-                    android:id="@+id/buttonPlusstocks4"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:text="+" />
-                <TextView
-                    android:id="@+id/scetchikstocks4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock4"
-                    android:layout_toRightOf="@id/buttonPlusstocks4"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:minWidth="20dp"
-                    android:minHeight="48dp"
-                    android:text="0"
-                    android:textSize="24dp"
-                    android:gravity="center"/>
-                <!-- Кнопка "-" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:layout_width="80dp"
-                    android:id="@+id/buttonminusstocks4"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock4"
-                    android:layout_toRightOf="@id/scetchikstocks4"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:text="-" />
+                    <!-- Текст2 -->
+                    <TextView
+                        android:id="@+id/pricestock4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nazvstock4"
+                        android:gravity="center"
+                        android:text="Текст2" />
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="8dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pricestock4">
+                        <!-- Кнопка "+" -->
+                        <Button
+                            android:id="@+id/buttonPlusstocks4"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="+"
+                            android:layout_marginRight="8dp"
+                            android:onClick="onClickPlusOrMinusStock"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            />
 
-                <!-- Изображение -->
-                <ImageView
-                    android:id="@+id/stockprod5"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                     />
+                        <TextView
+                            android:id="@+id/scetchikstocks4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/buttonPlusstocks4"
+                            android:layout_toLeftOf="@id/buttonminusstocks4"
+                            android:minWidth="20dp"
+                            android:minHeight="48dp"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="0"
+                            android:textSize="24dp"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            />
+                        <!-- Кнопка "-" -->
+                        <Button
+                            android:id="@+id/buttonminusstocks4"
+                            android:onClick="onClickPlusOrMinusStock"
+                            android:layout_width="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="-"
+                            android:layout_marginLeft="8dp" />
+                    </RelativeLayout>
 
-                <!-- Текст1 -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/stockprod5"
-                    android:id="@+id/nazvstock5"
-                    android:text="Текст1" />
+                </RelativeLayout>
 
-                <!-- Текст2 -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:gravity="center"
+                <RelativeLayout
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/nazvstock5"
-                    android:id="@+id/pricestock5"
-                    android:text="Текст2" />
+                    android:layout_margin="8dp"
+                    android:layout_weight="1">
 
-                <!-- Кнопка "+" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/pricestock5"
-                    android:id="@+id/buttonPlusstocks5"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:text="+" />
-                <TextView
-                    android:id="@+id/scetchikstocks5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock5"
-                    android:layout_toRightOf="@id/buttonPlusstocks5"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:minWidth="20dp"
-                    android:minHeight="48dp"
-                    android:text="0"
-                    android:textSize="24dp"
-                    android:gravity="center"/>
-                <!-- Кнопка "-" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:layout_width="80dp"
-                    android:id="@+id/buttonminusstocks5"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock5"
-                    android:layout_toRightOf="@id/scetchikstocks5"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:text="-" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_margin="8dp">
+                    <!-- Изображение -->
+                    <ImageView
+                        android:id="@+id/stockprod5"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
 
-                <!-- Изображение -->
-                <ImageView
-                    android:id="@+id/stockprod6"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                     />
+                    <!-- Текст1 -->
+                    <TextView
+                        android:id="@+id/nazvstock5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/stockprod5"
+                        android:gravity="center"
+                        android:text="Текст1" />
 
-                <!-- Текст1 -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/stockprod6"
-                    android:id="@+id/nazvstock6"
-                    android:text="Текст1" />
+                    <!-- Текст2 -->
+                    <TextView
+                        android:id="@+id/pricestock5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nazvstock5"
+                        android:gravity="center"
+                        android:text="Текст2" />
 
-                <!-- Текст2 -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nazvstock6"
-                    android:id="@+id/pricestock6"
-                    android:text="Текст2" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pricestock5">
+                        <!-- Кнопка "+" -->
+                        <Button
+                            android:id="@+id/buttonPlusstocks5"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="+"
+                            android:layout_marginRight="8dp"
+                            android:onClick="onClickPlusOrMinusStock"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            />
 
-                <!-- Кнопка "+" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:layout_width="80dp"
+                        <TextView
+                            android:id="@+id/scetchikstocks5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/buttonPlusstocks5"
+                            android:layout_toLeftOf="@id/buttonminusstocks5"
+                            android:minWidth="20dp"
+                            android:minHeight="48dp"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="0"
+                            android:textSize="24dp"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            />
+                        <!-- Кнопка "-" -->
+                        <Button
+                            android:id="@+id/buttonminusstocks5"
+                            android:onClick="onClickPlusOrMinusStock"
+                            android:layout_width="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="-"
+                            android:layout_marginLeft="8dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/pricestock6"
-                    android:id="@+id/buttonPlusstocks6"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:text="+" />
-                <TextView
-                    android:id="@+id/scetchikstocks6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/pricestock6"
-                    android:layout_toRightOf="@id/buttonPlusstocks6"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:minWidth="20dp"
-                    android:minHeight="48dp"
-                    android:text="0"
-                    android:textSize="24dp"
-                    android:gravity="center"/>
-                <!-- Кнопка "-" -->
-                <Button
-                    android:onClick="onClickPlusOrMinusStock"
-                    android:layout_width="80dp"
-                    android:id="@+id/buttonminusstocks6"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_background_krugloekoroche"
-                    android:layout_below="@+id/pricestock6"
-                    android:layout_toRightOf="@+id/scetchikstocks6"
-                    android:text="-" />
-            </RelativeLayout>
-        </GridLayout>
+                    android:layout_margin="8dp"
+                    android:layout_weight="1">
+
+                    <!-- Изображение -->
+                    <ImageView
+                        android:id="@+id/stockprod6"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
+
+                    <!-- Текст1 -->
+                    <TextView
+                        android:id="@+id/nazvstock6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/stockprod6"
+                        android:gravity="center"
+                        android:text="Текст1" />
+
+                    <!-- Текст2 -->
+                    <TextView
+                        android:id="@+id/pricestock6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nazvstock6"
+                        android:gravity="center"
+                        android:text="Текст2" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pricestock6">
+                        <!-- Кнопка "+" -->
+                        <Button
+                            android:id="@+id/buttonPlusstocks6"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="+"
+                            android:layout_marginRight="8dp"
+                            android:onClick="onClickPlusOrMinusStock"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/scetchikstocks6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/buttonPlusstocks6"
+                            android:layout_toLeftOf="@id/buttonminusstocks6"
+                            android:minWidth="20dp"
+                            android:minHeight="48dp"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="0"
+                            android:textSize="24dp"
+                            android:gravity="center"
+                            android:layout_centerInParent="true"
+                            />
+                        <!-- Кнопка "-" -->
+                        <Button
+                            android:id="@+id/buttonminusstocks6"
+                            android:onClick="onClickPlusOrMinusStock"
+                            android:layout_width="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_height="40dp"
+                            android:background="@drawable/button_background_krugloekoroche"
+                            android:text="-"
+                            android:layout_marginLeft="8dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </GridLayout>
 
     <!-- Нижняя часть с тремя кнопками -->
     <LinearLayout
