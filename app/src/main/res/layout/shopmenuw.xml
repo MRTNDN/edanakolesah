@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/greenknopka">
 
     <!-- Верхняя часть с EditText -->
@@ -23,7 +24,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextSearch">
-
+<androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="700dp"
@@ -33,7 +36,10 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/fone_background1"
             android:columnCount="2"
-            android:rowCount="3">
+            android:rowCount="3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
 
             <!-- Ячейка 1 -->
             <RelativeLayout
@@ -412,7 +418,7 @@
                     android:text="-" />
             </RelativeLayout>
         </GridLayout>
-    </ScrollView>
+
     <!-- Нижняя часть с тремя кнопками -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -420,8 +426,11 @@
         android:orientation="horizontal"
         android:layout_marginTop="16dp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="20dp">
-
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
         <!-- Кнопка главная -->
         <Button
             android:layout_width="0dp"
@@ -461,4 +470,7 @@
             />
 
     </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </RelativeLayout>
