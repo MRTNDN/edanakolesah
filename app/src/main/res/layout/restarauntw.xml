@@ -90,15 +90,15 @@
                     android:id="@+id/scetchik1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/buttonPlusrest1"
+                    android:layout_centerInParent="true"
                     android:layout_toLeftOf="@id/buttonminusrest1"
+                    android:layout_toRightOf="@id/buttonPlusrest1"
+                    android:background="@drawable/button_background_krugloekoroche"
+                    android:gravity="center"
                     android:minWidth="20dp"
                     android:minHeight="48dp"
-                    android:background="@drawable/button_background_krugloekoroche"
                     android:text="0"
-                    android:textSize="24dp"
-                    android:gravity="center"
-                    android:layout_centerInParent="true" />
+                    android:textSize="24dp" />
                 <!-- Кнопка "-" -->
                 <Button
                     android:onClick="onClickPlusOrMinusRest"
@@ -143,41 +143,43 @@
                     android:gravity="center"
                     android:layout_below="@+id/nazvrest2"
                     android:text="Текст2" />
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/pricerest2">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pricerest2">
                 <!-- Кнопка "+" -->
                 <Button
                     android:onClick="onClickPlusOrMinusRest"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:id="@+id/buttonPlusrest2"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-
                     android:background="@drawable/button_background_krugloekoroche"
-                    android:text="+" />
+                    android:text="+"
+                    android:layout_marginRight="8dp"/>
                 <!-- счетчик -->
                 <TextView
                     android:id="@+id/scetchik2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@id/buttonminusrest2"
                     android:layout_toRightOf="@id/buttonPlusrest2"
                     android:background="@drawable/button_background_krugloekoroche"
+                    android:gravity="center"
                     android:minWidth="20dp"
                     android:minHeight="48dp"
-                    android:gravity="center"
                     android:text="0"
                     android:textSize="24dp" />
                 <!-- Кнопка "-" -->
                 <Button
                     android:onClick="onClickPlusOrMinusRest"
-                    android:layout_width="80dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="40dp"
                     android:id="@+id/buttonminusrest2"
-                    android:layout_height="wrap_content"
-
-                    android:layout_toRightOf="@id/scetchik2"
                     android:background="@drawable/button_background_krugloekoroche"
-                    android:text="-" />
+                    android:text="-"
+                    android:layout_marginLeft="8dp"/>
             </RelativeLayout>
             </RelativeLayout>
             <RelativeLayout
