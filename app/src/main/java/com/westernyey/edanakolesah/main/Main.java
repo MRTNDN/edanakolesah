@@ -45,7 +45,7 @@ public class Main extends AppCompatActivity {
             public void onClick(View v) {
                 // Создаем Intent для перехода в следующую активити
                 Intent intent = new Intent(Main.this, shopmenu.class);
-                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+
                 // Добавляем дополнительные данные, если необходимо
                 intent.putExtra("keyAddress", addres);
                 // Запускаем следующую активити
@@ -62,12 +62,12 @@ public class Main extends AppCompatActivity {
             public void onClick(View v) {
                 // Создаем Intent для перехода в следующую активити
                 Intent intent = new Intent(Main.this, restaraunt.class);
-                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+
                 // Добавляем дополнительные данные, если необходимо
                 intent.putExtra("key", "value");
                 intent.putExtra("keyAddress", addres);
                 // Запускаем следующую активити
-                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+
                 startActivity(intent);
             }
         });
@@ -81,7 +81,7 @@ public class Main extends AppCompatActivity {
             public void onClick(View v) {
                 // Создаем Intent для перехода в следующую активити
                 Intent intent = new Intent(Main.this, Stocks.class);
-                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+
                 // Добавляем дополнительные данные, если необходимо
                 intent.putExtra("key", "value");
                 intent.putExtra("keyAddress", addres);
