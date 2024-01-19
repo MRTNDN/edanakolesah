@@ -45,8 +45,8 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginTop="30dp"
-                android:layout_margin="8dp">
+                android:layout_marginTop="40dp"
+                android:layout_margin="10dp">
 
                 <!-- Изображение -->
                 <ImageView
@@ -116,8 +116,8 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginTop="30dp"
-                android:layout_margin="8dp">
+                android:layout_marginTop="40dp"
+                android:layout_margin="5dp">
 
                 <!-- Изображение -->
                 <ImageView
@@ -483,6 +483,7 @@
         <Button
             android:layout_width="0dp"
             android:padding="35dp"
+
             android:maxHeight="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -42,6 +42,7 @@ public class Stocks extends AppCompatActivity {
     String addres;
     private String kol="";
     private String id_prod = "";
+    String numberOrder;
     ImageView imgStock1;
     ImageView imgStock2;
     ImageView imgStock3;
@@ -180,6 +181,7 @@ public class Stocks extends AppCompatActivity {
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(Stocks.this, Bin.class);
                 intent.putExtra("keyAddress", addres);
+                intent.putExtra("number", numberOrder);
                 startActivity(intent);
             }
         });
@@ -279,12 +281,12 @@ public class Stocks extends AppCompatActivity {
 
 
             Random rand = new Random();
-            int randomNumber = rand.nextInt(10000 - 100 + 1) + 100;
+            numberOrder = String.valueOf(rand.nextInt(10000 - 100 + 1) + 100);
             Map<String, Object> cart = new HashMap<>();
             cart.put("address", addres);
             cart.put("id_payment_method", "0");
             cart.put("id_product", id_prod);
-            cart.put("order_number", randomNumber);
+            cart.put("order_number", numberOrder);
             cart.put("product_quantity", kol);
 
             db.collection("shopping_cart")

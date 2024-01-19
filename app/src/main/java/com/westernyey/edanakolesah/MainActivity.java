@@ -61,13 +61,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        // Загружаем и устанавливаем SVG для каждого изображения
-        loadSvgFromResource(R.raw.vk, R.id.imageView1);
-        loadSvgFromResource(R.raw.yandex, R.id.imageView2);
-        loadSvgFromResource(R.raw.mailru, R.id.imageView3);
-        loadSvgFromResource(R.raw.telegram, R.id.imageView4);
-
         // Добавляем прослушиватель текста в EditText1
         editText1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -114,20 +107,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void loadSvgFromResource(int resourceId, int imageViewId) {
-        try {
-            Resources resources = getResources();
-            InputStream inputStream = resources.openRawResource(resourceId);
-            SVG svg = SVG.getFromInputStream(inputStream);
-            PictureDrawable pictureDrawable = new PictureDrawable(svg.renderToPicture());
 
-            // Находим ImageView по ID и устанавливаем SVG-изображение
-            ImageView imageView = findViewById(imageViewId);
-            imageView.setImageDrawable(pictureDrawable);
-        } catch (SVGParseException e) {
-            e.printStackTrace();
-        }
-    }
 
     public void click(View view){
         db.collection("client")

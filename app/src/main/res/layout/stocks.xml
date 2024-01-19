@@ -44,8 +44,8 @@
                 <RelativeLayout
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="50dp"
                     android:layout_weight="1">
 
                     <!-- Изображение -->
@@ -116,8 +116,8 @@
                 <RelativeLayout
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="50dp"
                     android:layout_weight="1">
 
                     <!-- Изображение -->
