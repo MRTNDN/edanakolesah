@@ -30,9 +30,9 @@ public class Bin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bin);
-        Button buttonMain = findViewById(R.id.buttonAccount);
+        Button buttonMain = findViewById(R.id.buttonMain);
         Button buttonBin = findViewById(R.id.buttonBin);
-        Button buttonAccount = findViewById(R.id.buttonMain);
+        Button buttonAccount = findViewById(R.id.buttonAccount);
         Bundle extras1 = getIntent().getExtras();
         addres = extras1.getString("keyAddress");
 
@@ -100,6 +100,7 @@ public class Bin extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(Bin.this, Bin.class);
+                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
                 intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
@@ -110,6 +111,7 @@ public class Bin extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "аккаунт"
                 Intent intent = new Intent(Bin.this, Account.class);
+                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
