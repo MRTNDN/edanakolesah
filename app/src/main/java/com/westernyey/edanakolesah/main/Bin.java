@@ -29,8 +29,6 @@ public class Bin extends AppCompatActivity {
         Bundle extras1 = getIntent().getExtras();
         addres = extras1.getString("keyAddress");
 
-
-
         CollectionReference colRef = db.collection("shopping_cart");
         colRef
                 .whereEqualTo("address", addres)
@@ -42,7 +40,6 @@ public class Bin extends AppCompatActivity {
                             String idProduct = doc.getString("id_product"); // Получаем значение поля "id_product"
                             kolvo = doc.getString("product_quantity");
                             data = idProduct;
-
                         }
                         if (data == null) {
                             String[] nullAdapter = new String[]{"Пока что тут пусто!"};
