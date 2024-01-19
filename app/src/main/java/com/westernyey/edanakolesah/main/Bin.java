@@ -144,6 +144,7 @@ public class Bin extends AppCompatActivity {
             }
         });
         Intent intent = new Intent(Bin.this, Main.class);
+        intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
     }
 
