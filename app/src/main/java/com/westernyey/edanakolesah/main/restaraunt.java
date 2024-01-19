@@ -1,6 +1,8 @@
 // shopmenu.java
 package com.westernyey.edanakolesah.main;
 
+import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -139,6 +141,7 @@ public class restaraunt extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "главная"
                 Intent intent = new Intent(restaraunt.this, Main.class);
+                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -162,8 +165,45 @@ public class restaraunt extends AppCompatActivity {
             }
         });
     }
-}
+        public void onClickPlusOrMinus(View v) {
+            // Получаем соответствующий TextView
+            TextView scetchikTextView = null;
 
+            if (v.getId() == R.id.buttonPlusrest1 || v.getId() == R.id.buttonminusrest1) {
+                scetchikTextView = findViewById(R.id.scetchik1);
+            } else if (v.getId() == R.id.buttonPlusrest2 || v.getId() == R.id.buttonminusrest2) {
+                scetchikTextView = findViewById(R.id.scetchik2);
+            } else if (v.getId() == R.id.buttonPlusrest3 || v.getId() == R.id.buttonminusrest3) {
+                scetchikTextView = findViewById(R.id.scetchik3);
+            } else if (v.getId() == R.id.buttonPlusrest4 || v.getId() == R.id.buttonminusrest4) {
+                scetchikTextView = findViewById(R.id.scetchik4);
+            } else if (v.getId() == R.id.buttonPlusrest5 || v.getId() == R.id.buttonminusrest5) {
+                scetchikTextView = findViewById(R.id.scetchik5);
+            } else if (v.getId() == R.id.buttonPlusrest6 || v.getId() == R.id.buttonminusrest6) {
+                scetchikTextView = findViewById(R.id.scetchik6);
+            }
+
+            if (scetchikTextView != null) {
+                // Получаем текущее значение
+                int currentValue = Integer.parseInt(scetchikTextView.getText().toString());
+
+                // Обрабатываем "+" или "-"
+                if (v.getId() == R.id.buttonPlusrest1 || v.getId() == R.id.buttonPlusrest2 || v.getId() == R.id.buttonPlusrest3 || v.getId() == R.id.buttonPlusrest4 || v.getId() == R.id.buttonPlusrest5 || v.getId() == R.id.buttonPlusrest6) {
+                    // Увеличиваем значение, если не превышает 10
+                    if (currentValue < 10) {
+                        currentValue++;
+                    }
+                } else if (v.getId() == R.id.buttonminusrest1 || v.getId() == R.id.buttonminusrest2 || v.getId() == R.id.buttonminusrest3 || v.getId() == R.id.buttonminusrest4 || v.getId() == R.id.buttonminusrest5 || v.getId() == R.id.buttonminusrest6) {
+                    // Уменьшаем значение, если не отрицательное
+                    if (currentValue > 0) {
+                        currentValue--;
+                    }
+                }
+
+                // Устанавливаем новое значение в TextView
+                scetchikTextView.setText(String.valueOf(currentValue));
+            }
+        }}
 
 
 

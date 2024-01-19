@@ -4,7 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="greenmain">#00CB65</color>
     <color name="greenknopka">#BDFBBD</color>
-    <color name="textknopka">#C1C1C1</color>
+    <color name="textknopka">#FF000000</color>
     <color name="fonlogo">#99FF99</color>
     <color name="greenback">#99FF77</color>
 </resources>

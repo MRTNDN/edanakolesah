@@ -1,8 +1,13 @@
 package com.westernyey.edanakolesah.main;
 
+import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.firestore.CollectionReference;
@@ -25,7 +30,9 @@ public class Bin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bin);
-
+        Button buttonMain = findViewById(R.id.buttonAccount);
+        Button buttonBin = findViewById(R.id.buttonBin);
+        Button buttonAccount = findViewById(R.id.buttonMain);
         Bundle extras1 = getIntent().getExtras();
         addres = extras1.getString("keyAddress");
 
@@ -78,6 +85,35 @@ public class Bin extends AppCompatActivity {
                     }
                 });
 
+        buttonMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "главная"
+                Intent intent = new Intent(Bin.this, Main.class);
+                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+        });
+
+        buttonBin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "корзина"
+                Intent intent = new Intent(Bin.this, Bin.class);
+                intent.putExtra("keyAddress", addres);
+                startActivity(intent);
+            }
+        });
+
+        buttonAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "аккаунт"
+                Intent intent = new Intent(Bin.this, Account.class);
+                startActivity(intent);
+            }
+        });
+    }
 
     }
-}
+

@@ -1,5 +1,7 @@
 package com.westernyey.edanakolesah.main;
 
+import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -65,6 +67,7 @@ public class Main extends AppCompatActivity {
                 intent.putExtra("key", "value");
                 intent.putExtra("keyAddress", addres);
                 // Запускаем следующую активити
+                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -87,20 +90,19 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        // Пример обработки нажатия кнопки "Назад"
-        Button backButton = findViewById(R.id.Back); // Замените на ваш реальный ID кнопки
+
+        Button backButton = findViewById(R.id.Back);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed(); // Вызывает обработчик нажатия кнопки "Назад"
+                onBackPressed();
             }
         });
     }
 
     @Override
     public void onBackPressed() {
-        // Ваш код для обработки нажатия кнопки "Назад"
-        // Здесь вы можете выполнить дополнительные действия перед переходом на предыдущую активность
-        super.onBackPressed(); // Это вызывает стандартное поведение кнопки "Назад" (возврат к предыдущей активности)
+
+        super.onBackPressed();
     }
 }

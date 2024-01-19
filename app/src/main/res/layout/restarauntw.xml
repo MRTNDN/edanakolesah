@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/greenknopka">
 
     <!-- Верхняя часть с EditText -->
@@ -17,13 +18,15 @@
         android:layout_marginBottom="16dp"
         android:hint="Поиск"
         android:background="@drawable/button_background_krugloekoroche" />
-
     <!-- Средняя часть с "плиткой 2x3" -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextSearch">
-
+        android:layout_below="@id/editTextSearch"
+        >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="700dp"
@@ -33,7 +36,10 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/fone_background1"
             android:columnCount="2"
-            android:rowCount="3">
+            android:rowCount="3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
 
             <!-- Ячейка 1 -->
             <RelativeLayout
@@ -323,8 +329,8 @@
 
                 <!-- Кнопка "+" -->
                 <Button
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_below="@+id/pricerest5"
                     android:id="@+id/buttonPlusrest5"
                     android:background="@drawable/button_background_krugloekoroche"
@@ -344,11 +350,12 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
-                    android:layout_width="80dp"
+                    android:layout_width="40dp"
+                    android:layout_alignParentRight="true"
                     android:id="@+id/buttonminusrest5"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/pricerest5"
-                    android:layout_toRightOf="@id/scetchik5"
+
                     android:background="@drawable/button_background_krugloekoroche"
                     android:text="-" />
             </RelativeLayout>
@@ -414,9 +421,8 @@
                     android:background="@drawable/button_background_krugloekoroche"
                     android:text="-" />
             </RelativeLayout>
+
         </GridLayout>
-    </ScrollView>
-    <!-- Нижняя часть с тремя кнопками -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -424,6 +430,9 @@
         android:layout_marginTop="16dp"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         >
         <!-- Кнопка главная -->
         <Button
@@ -460,6 +469,9 @@
             android:drawableLeft="@drawable/account1"
             android:id="@+id/buttonaccount"
             />
-
     </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <!-- Нижняя часть с тремя кнопками -->
+
 </RelativeLayout>

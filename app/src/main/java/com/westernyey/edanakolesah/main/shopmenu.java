@@ -168,4 +168,43 @@ public class shopmenu extends AppCompatActivity {
             }
         });
     }
-}
+        public void onClickPlusOrMinus(View v) {
+            // Получаем соответствующий TextView
+            TextView scetchikTextView = null;
+
+            if (v.getId() == R.id.buttonPlusshop1 || v.getId() == R.id.buttonminusshop1) {
+                scetchikTextView = findViewById(R.id.scetchikshop1);
+            } else if (v.getId() == R.id.buttonPlusshop2 || v.getId() == R.id.buttonminusshop2) {
+                scetchikTextView = findViewById(R.id.scetchikshop2);
+            } else if (v.getId() == R.id.buttonPlusshop3 || v.getId() == R.id.buttonminusshop3) {
+                scetchikTextView = findViewById(R.id.scetchikshop3);
+            } else if (v.getId() == R.id.buttonPlusshop4 || v.getId() == R.id.buttonminusshop4) {
+                scetchikTextView = findViewById(R.id.scetchikshop4);
+            } else if (v.getId() == R.id.buttonPlusshop5 || v.getId() == R.id.buttonminusshop5) {
+                scetchikTextView = findViewById(R.id.scetchikshop5);
+            } else if (v.getId() == R.id.buttonPlusshop6|| v.getId() == R.id.buttonminusshop6) {
+                scetchikTextView = findViewById(R.id.scetchikshop6);
+            }
+
+            if (scetchikTextView != null) {
+                // Получаем текущее значение
+                int currentValue = Integer.parseInt(scetchikTextView.getText().toString());
+
+                // Обрабатываем "+" или "-"
+                if (v.getId() == R.id.buttonPlusshop1  || v.getId() == R.id.buttonPlusshop2  || v.getId() == R.id.buttonPlusshop3 || v.getId() == R.id.buttonPlusshop4 || v.getId() == R.id.buttonPlusshop5 || v.getId() == R.id.buttonPlusshop6) {
+                    // Увеличиваем значение, если не превышает 10
+                    if (currentValue < 10) {
+                        currentValue++;
+                    }
+                } else if (v.getId() == R.id.buttonminusshop1 || v.getId() == R.id.buttonminusshop2 || v.getId() == R.id.buttonminusshop3 || v.getId() == R.id.buttonminusshop4 || v.getId() == R.id.buttonminusshop5 || v.getId() == R.id.buttonminusshop6) {
+                    // Уменьшаем значение, если не отрицательное
+                    if (currentValue > 0) {
+                        currentValue--;
+                    }
+                }
+
+                // Устанавливаем новое значение в TextView
+                scetchikTextView.setText(String.valueOf(currentValue));
+            }
+        }
+    }

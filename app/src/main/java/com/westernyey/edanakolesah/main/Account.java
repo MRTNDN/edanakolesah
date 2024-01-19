@@ -1,5 +1,7 @@
 package com.westernyey.edanakolesah.main;
 
+import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -58,6 +60,7 @@ public class Account extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(Account.this, Bin.class);
+                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
