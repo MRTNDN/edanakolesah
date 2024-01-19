@@ -168,7 +168,7 @@ public class shopmenu extends AppCompatActivity {
             }
         });
     }
-        public void onClickPlusOrMinus(View v) {
+        public void onClickPlusOrMinusShop(View v) {
             // Получаем соответствующий TextView
             TextView scetchikTextView = null;
 

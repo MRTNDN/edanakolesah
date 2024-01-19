@@ -75,10 +75,10 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:id="@+id/buttonPlusrest1"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-
                     android:layout_below="@+id/pricerest1"
                     android:background="@drawable/button_background_krugloekoroche"
                     android:text="+" />
@@ -97,6 +97,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:id="@+id/buttonminusrest1"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -140,6 +141,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:id="@+id/buttonPlusrest2"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -161,6 +163,7 @@
                     android:textSize="24dp" />
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusrest2"
                     android:layout_height="wrap_content"
@@ -203,6 +206,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/pricerest3"
@@ -224,6 +228,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:id="@+id/buttonminusrest3"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -265,6 +270,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/pricerest4"
@@ -286,6 +292,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusrest4"
                     android:layout_height="wrap_content"
@@ -329,6 +336,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_below="@+id/pricerest5"
@@ -350,6 +358,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:layout_width="40dp"
                     android:layout_alignParentRight="true"
                     android:id="@+id/buttonminusrest5"
@@ -392,6 +401,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_background_krugloekoroche"
@@ -413,6 +423,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
+                    android:onClick="onClickPlusOrMinusRest"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusrest6"
                     android:layout_height="wrap_content"

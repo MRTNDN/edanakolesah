@@ -69,7 +69,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/pricestock1"
@@ -90,7 +90,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:id="@+id/buttonminusstocks1"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:id="@+id/buttonPlusstocks2"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -155,7 +155,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:id="@+id/buttonminusstocks2"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -199,7 +199,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/pricestock3"
@@ -220,7 +220,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:id="@+id/buttonminusstocks3"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
@@ -262,7 +262,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/pricestock4"
@@ -283,7 +283,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusstocks4"
                     android:layout_height="wrap_content"
@@ -326,7 +326,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/pricestock5"
@@ -347,7 +347,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusstocks5"
                     android:layout_height="wrap_content"
@@ -389,7 +389,7 @@
 
                 <!-- Кнопка "+" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/pricestock6"
@@ -410,7 +410,7 @@
                     android:gravity="center"/>
                 <!-- Кнопка "-" -->
                 <Button
-                    android:onClick="onClickPlusOrMinus"
+                    android:onClick="onClickPlusOrMinusStock"
                     android:layout_width="80dp"
                     android:id="@+id/buttonminusstocks6"
                     android:layout_height="wrap_content"
