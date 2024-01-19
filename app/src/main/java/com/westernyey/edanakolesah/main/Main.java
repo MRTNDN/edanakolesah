@@ -27,10 +27,11 @@ public class Main extends AppCompatActivity {
 
         //Меняем имя вошедшего
         button1 = findViewById(R.id.buttonTop);
-        Bundle extras = getIntent().getExtras();
 
-        String value = extras.getString("key");
-        button1.setText("Здравствуйте, "+value);
+        Bundle extras = getIntent().getExtras();
+            String value = extras.getString("key");
+            button1.setText("Здравствуйте, " + value);
+
 
         Bundle extras1 = getIntent().getExtras();
         String addres = extras1.getString("keyAddress");
