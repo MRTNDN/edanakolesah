@@ -48,7 +48,7 @@
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="4dp"
-                android:background="@drawable/button_background_krugloekoroche"
+                android:background="@drawable/zakaz_fiol"
                 android:text="заказать"
                 android:textColor="@color/black" />
 
