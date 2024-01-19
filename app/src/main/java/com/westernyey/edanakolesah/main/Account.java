@@ -51,6 +51,7 @@ public class Account extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "промокод"
                 Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.main.nastacc.Promocod.class);
+                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });
@@ -70,6 +71,7 @@ public class Account extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "аккаунт"
                 Intent intent = new Intent(Account.this, Account.class);
+                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });

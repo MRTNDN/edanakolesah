@@ -67,7 +67,7 @@ public class Main extends AppCompatActivity {
                 intent.putExtra("key", "value");
                 intent.putExtra("keyAddress", addres);
                 // Запускаем следующую активити
-                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+
                 startActivity(intent);
             }
         });
