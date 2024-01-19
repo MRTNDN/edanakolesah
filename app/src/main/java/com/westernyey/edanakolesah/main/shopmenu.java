@@ -158,6 +158,7 @@ public class shopmenu extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "главная"
                 Intent intent = new Intent(shopmenu.this, Main.class);
+                intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
         });

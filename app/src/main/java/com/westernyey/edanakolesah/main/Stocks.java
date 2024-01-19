@@ -170,6 +170,7 @@ public class Stocks extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "главная"
                 Intent intent = new Intent(Stocks.this, Main.class);
+                intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
         });
