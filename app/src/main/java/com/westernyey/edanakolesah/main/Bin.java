@@ -101,6 +101,7 @@ public class Bin extends AppCompatActivity {
                 // Обработчик для кнопки "главная"
                 Intent intent = new Intent(Bin.this, Main.class);
                 intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+                intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
         });
