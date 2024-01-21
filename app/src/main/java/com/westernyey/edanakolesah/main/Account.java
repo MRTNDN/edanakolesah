@@ -21,7 +21,8 @@ public class Account extends AppCompatActivity {
         Button buttonAccount = findViewById(R.id.buttonaccount);
         Button tpbutton = findViewById(R.id.tpbutton);
         Button promonutton = findViewById(R.id.promonutton);
-        Button history = findViewById(R.id.zakbutton);
+        Button passbutton = findViewById(R.id.passbutton);
+
         buttonMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,14 +39,6 @@ public class Account extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        history.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Обработчик для кнопки "история"
-                Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.main.nastacc.Historyzk.class);
-                startActivity(intent);
-            }
-        });
         promonutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +48,16 @@ public class Account extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        passbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Обработчик для кнопки "изменить пароль."
+                Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.vost.vostanovlenieActivity.class);
+                intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+        });
+
 
         buttonBin.setOnClickListener(new View.OnClickListener() {
             @Override
