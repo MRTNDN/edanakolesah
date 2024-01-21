@@ -39,6 +39,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class Stocks extends AppCompatActivity {
+    TextView scetchikTextView1, scetchikTextView2, scetchikTextView3, scetchikTextView4,scetchikTextView5,scetchikTextView6;
     String addres;
     private String kol="";
     private String id_prod = "";
@@ -54,9 +55,24 @@ public class Stocks extends AppCompatActivity {
     TextView nazvStock1, nazvStock2, nazvStock3, nazvStock4, nazvStock5, nazvStock6, priceStock1, priceStock2, priceStock3, priceStock4, priceStock5, priceStock6;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onStart() {
+        super.onStart();
         setContentView(R.layout.stocks);
+        kol="";
+        id_prod="";
+
+        scetchikTextView1 = findViewById(R.id.scetchikstocks1);
+        scetchikTextView1.setText("0");
+        scetchikTextView2 = findViewById(R.id.scetchikstocks2);
+        scetchikTextView2.setText("0");
+        scetchikTextView3 = findViewById(R.id.scetchikstocks3);
+        scetchikTextView3.setText("0");
+        scetchikTextView4 = findViewById(R.id.scetchikstocks4);
+        scetchikTextView4.setText("0");
+        scetchikTextView5 = findViewById(R.id.scetchikstocks5);
+        scetchikTextView5.setText("0");
+        scetchikTextView6 = findViewById(R.id.scetchikstocks6);
+        scetchikTextView6.setText("0");
 
         Bundle extras1 = getIntent().getExtras();
         addres = extras1.getString("keyAddress");
@@ -131,6 +147,7 @@ public class Stocks extends AppCompatActivity {
                     });
         }
     }
+
 
     private void loadImageFromUrl(String url, ImageView imgRest) {
 
@@ -239,7 +256,7 @@ public class Stocks extends AppCompatActivity {
 
         public void addToCart(){
 
-        TextView scetchikTextView1, scetchikTextView2, scetchikTextView3, scetchikTextView4,scetchikTextView5,scetchikTextView6;
+
             TextView[] scet = new TextView[]{
                     scetchikTextView1 = findViewById(R.id.scetchikstocks1),
                     scetchikTextView2 = findViewById(R.id.scetchikstocks2),

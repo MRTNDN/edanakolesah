@@ -31,6 +31,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class shopmenu extends AppCompatActivity {
+    TextView scetchikTextView1, scetchikTextView2, scetchikTextView3, scetchikTextView4,scetchikTextView5,scetchikTextView6;
     String addres;
     String numberOrder;
     private String kol="";
@@ -45,9 +46,25 @@ public class shopmenu extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onStart() {
+        super.onStart();
         setContentView(R.layout.shopmenuw);
+
+        kol="";
+        id_prod="";
+
+        scetchikTextView1 = findViewById(R.id.scetchikshop1);
+        scetchikTextView1.setText("0");
+        scetchikTextView2 = findViewById(R.id.scetchikshop2);
+        scetchikTextView2.setText("0");
+        scetchikTextView3 = findViewById(R.id.scetchikshop3);
+        scetchikTextView3.setText("0");
+        scetchikTextView4 = findViewById(R.id.scetchikshop4);
+        scetchikTextView4.setText("0");
+        scetchikTextView5 = findViewById(R.id.scetchikshop5);
+        scetchikTextView5.setText("0");
+        scetchikTextView6 = findViewById(R.id.scetchikshop6);
+        scetchikTextView6.setText("0");
 
         Bundle extras1 = getIntent().getExtras();
         addres = extras1.getString("keyAddress");
@@ -121,6 +138,7 @@ public class shopmenu extends AppCompatActivity {
                     });
         }
     }
+
     private void loadImageFromUrl(String url, ImageView imgRest) {
 
         new AsyncTask<String, Void, Bitmap>() {
@@ -226,7 +244,7 @@ public class shopmenu extends AppCompatActivity {
 
     public void addToCart(){
 
-        TextView scetchikTextView1, scetchikTextView2, scetchikTextView3, scetchikTextView4,scetchikTextView5,scetchikTextView6;
+
         TextView[] scet = new TextView[]{
                 scetchikTextView1 = findViewById(R.id.scetchikshop1),
                 scetchikTextView2 = findViewById(R.id.scetchikshop2),

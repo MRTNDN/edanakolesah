@@ -34,6 +34,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class restaraunt extends AppCompatActivity {
+    TextView scetchikTextView1, scetchikTextView2, scetchikTextView3, scetchikTextView4,scetchikTextView5,scetchikTextView6;
     private String kol = "";
     private String id_prod = "";
     String numberOrder;
@@ -41,32 +42,49 @@ public class restaraunt extends AppCompatActivity {
     ImageView imgRest1;ImageView imgRest2;ImageView imgRest3;ImageView imgRest4;ImageView imgRest5;ImageView imgRest6;
     TextView nazvRest1,nazvRest2,nazvRest3,nazvRest4,nazvRest5,nazvRest6, priceRest1,priceRest2,priceRest3,priceRest4,priceRest5,priceRest6;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onStart() {
+        super.onStart();
         setContentView(R.layout.restarauntw);
+
+        kol="";
+        id_prod="";
+
+        scetchikTextView1 = findViewById(R.id.scetchik1);
+        scetchikTextView1.setText("0");
+        scetchikTextView2 = findViewById(R.id.scetchik2);
+        scetchikTextView2.setText("0");
+        scetchikTextView3 = findViewById(R.id.scetchik3);
+        scetchikTextView3.setText("0");
+        scetchikTextView4 = findViewById(R.id.scetchik4);
+        scetchikTextView4.setText("0");
+        scetchikTextView5 = findViewById(R.id.scetchik5);
+        scetchikTextView5.setText("0");
+        scetchikTextView6 = findViewById(R.id.scetchik6);
+        scetchikTextView6.setText("0");
 
         Bundle extras1 = getIntent().getExtras();
         addres = extras1.getString("keyAddress");
 
         // Найдите ImageView после установки макета
         ImageView[] images = new ImageView[]{
-        imgRest1 = findViewById(R.id.rest1),
-        imgRest2 = findViewById(R.id.rest2),
-        imgRest3 = findViewById(R.id.rest3),
-        imgRest4 = findViewById(R.id.rest4),
-        imgRest5 = findViewById(R.id.rest5),
-        imgRest6 = findViewById(R.id.rest6)
+                imgRest1 = findViewById(R.id.rest1),
+                imgRest2 = findViewById(R.id.rest2),
+                imgRest3 = findViewById(R.id.rest3),
+                imgRest4 = findViewById(R.id.rest4),
+                imgRest5 = findViewById(R.id.rest5),
+                imgRest6 = findViewById(R.id.rest6)
         };
 
         TextView[] name_prod = new TextView[]{
-        nazvRest1 = findViewById(R.id.nazvrest1),
-        nazvRest2 = findViewById(R.id.nazvrest2),
-        nazvRest3 = findViewById(R.id.nazvrest3),
-        nazvRest4 = findViewById(R.id.nazvrest4),
-        nazvRest5 = findViewById(R.id.nazvrest5),
-        nazvRest6 = findViewById(R.id.nazvrest6)
-    };
+                nazvRest1 = findViewById(R.id.nazvrest1),
+                nazvRest2 = findViewById(R.id.nazvrest2),
+                nazvRest3 = findViewById(R.id.nazvrest3),
+                nazvRest4 = findViewById(R.id.nazvrest4),
+                nazvRest5 = findViewById(R.id.nazvrest5),
+                nazvRest6 = findViewById(R.id.nazvrest6)
+        };
         TextView[] price_prod = new TextView[]{
                 priceRest1 = findViewById(R.id.pricerest1),
                 priceRest2 = findViewById(R.id.pricerest2),
@@ -109,8 +127,8 @@ public class restaraunt extends AppCompatActivity {
                                     // Если нашли совпадение, выводим данные документа
                                     String name = doc.getString("name_product");
                                     String price = doc.getString("price");
-                                        name_prod[num-13].setText(name);
-                                        price_prod[num-13].setText(price + " ₽");
+                                    name_prod[num-13].setText(name);
+                                    price_prod[num-13].setText(price + " ₽");
                                 }
                             }
                         }
@@ -224,7 +242,7 @@ public class restaraunt extends AppCompatActivity {
 
     public void addToCart(){
 
-        TextView scetchikTextView1, scetchikTextView2, scetchikTextView3, scetchikTextView4,scetchikTextView5,scetchikTextView6;
+
         TextView[] scet = new TextView[]{
                 scetchikTextView1 = findViewById(R.id.scetchik1),
                 scetchikTextView2 = findViewById(R.id.scetchik2),

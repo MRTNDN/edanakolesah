@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.westernyey.edanakolesah.R;
+import com.westernyey.edanakolesah.registrActivity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -128,7 +130,7 @@ public class Bin extends AppCompatActivity {
         });
     }
 
-    public void deleteDoc(View v){
+    public void deleteDocZak(View v){
         FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
         CollectionReference itemsRef = rootRef.collection("shopping_cart");
         Query query = itemsRef.whereEqualTo("address", addres);
@@ -138,15 +140,34 @@ public class Bin extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     for (DocumentSnapshot document : task.getResult()) {
                         itemsRef.document(document.getId()).delete();
+                        Toast.makeText(Bin.this, "Заказ скоро будет у Вас!", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Log.d("Myapp", "Error getting documents: ", task.getException());
                 }
             }
         });
-        Intent intent = new Intent(Bin.this, Main.class);
-        intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
-        startActivity(intent);
+        finish();
+    }
+
+    public void deleteDocDel(View v){
+        FirebaseFirestore rootRef = FirebaseFirestore.getInstance();
+        CollectionReference itemsRef = rootRef.collection("shopping_cart");
+        Query query = itemsRef.whereEqualTo("address", addres);
+        query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (DocumentSnapshot document : task.getResult()) {
+                        itemsRef.document(document.getId()).delete();
+                        Toast.makeText(Bin.this, "Корзина очищена!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Log.d("Myapp", "Error getting documents: ", task.getException());
+                }
+            }
+        });
+        finish();
     }
 
 }

@@ -99,7 +99,7 @@
                             android:background="@drawable/button_backgroundminus"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Рестораны"
+                            android:text="@string/rest"
                             android:textColor="@color/black" />
 
                     </RelativeLayout>
