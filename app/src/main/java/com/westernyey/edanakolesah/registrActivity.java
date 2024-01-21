@@ -76,40 +76,49 @@ public class registrActivity extends AppCompatActivity {
         // Другие действия, которые могут быть выполнены при создании активности
 
 
-    public void ButRegistr(View view){
+    public void ButRegistr(View view) {
+
         String selectedTown = spinnerCity.getSelectedItem().toString();
+        if (selectedTown.equals("Выберите город")) {
+            Toast.makeText(registrActivity.this, "Выберите город!", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            String[] values = full_name.getText().toString().split(" ");
+            if (values.length >= 3) {
+                String last_name = values[0];
+                String name = values[1];
+                String midle_name = values[2];
+                Map<String, Object> client = new HashMap<>();
+                client.put("login", log.getText().toString());
+                client.put("password", pass.getText().toString());
+                client.put("address", addres.getText().toString());
+                client.put("id_town", selectedTown);
+                client.put("last_name", last_name);
+                client.put("midle_name", midle_name);
+                client.put("name", name);
+                client.put("number_phone", number_phone.getText().toString());
+                Log.d("Myapp", String.valueOf(client.size()));
 
-        String[] values = full_name.getText().toString().split(" ");
-        Log.d(TAG, values[0]+" " +values[1]+" " +values[2]);
-        String last_name =values[0];
-        String name = values[1];
-        String midle_name = values[2];
-        // Create a new user with a first and last name
-        Map<String, Object> client = new HashMap<>();
-        client.put("login", log.getText().toString());
-        client.put("password", pass.getText().toString());
-        client.put("address", addres.getText().toString());
-        client.put("id_town", selectedTown);
-        client.put("last_name", last_name);
-        client.put("midle_name",midle_name);
-        client.put("name", name);
-        client.put("number_phone",number_phone.getText().toString());
+                db.collection("client")
+                        .add(client)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Toast.makeText(registrActivity.this, "Успешно!", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(registrActivity.this, "Ошибка сервера!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            } else {
+                Toast.makeText(registrActivity.this, "Введите ФИО полность. Через пробел!", Toast.LENGTH_LONG).show();
+            }
 
-// Add a new document with a generated ID
-        db.collection("client")
-                .add(client)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(registrActivity.this, "Успешно!", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(registrActivity.this, "ошибка сервера!", Toast.LENGTH_SHORT).show();
-                    }
-                });
 
+        }
     }
 }
+

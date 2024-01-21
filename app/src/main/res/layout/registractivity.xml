@@ -110,7 +110,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="7dp"
             android:background="@drawable/button_background_krugloekoroche"
-            android:hint="введите ФИО"
+            android:hint="введите ФИО(через пробел)"
             android:gravity="center"
             android:textColor="@color/textknopka"
             android:contentDescription="Поле для ввода фио" />
