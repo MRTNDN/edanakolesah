@@ -9,17 +9,31 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.SetOptions;
 import com.westernyey.edanakolesah.R;
 
 public class newpassActivity extends AppCompatActivity {
     EditText editTextDoublePass, editTextPass;
     Button button;
+    String login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newpassactivity);
+
+        Bundle extras1 = getIntent().getExtras();
+        login = extras1.getString("log");
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         // Находим компоненты в макете
          editTextPass = findViewById(R.id.editTextpass);
@@ -63,6 +77,7 @@ public class newpassActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 // Показываем уведомление
                 Toast.makeText(newpassActivity.this, "Пароль изменен!", Toast.LENGTH_SHORT).show();
 

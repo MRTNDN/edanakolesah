@@ -16,7 +16,7 @@ import com.westernyey.edanakolesah.R;
 public class kodsmsactivity extends AppCompatActivity {
     Button sendButton;
     EditText codeEditText;
-
+    String login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,8 @@ public class kodsmsactivity extends AppCompatActivity {
         sendButton = findViewById(R.id.BText);
         codeEditText = findViewById(R.id.editText);
 
-
+        Bundle extras1 = getIntent().getExtras();
+        login = extras1.getString("log");
 
         // Назначим обработчик нажатия
         sendButton.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +42,7 @@ public class kodsmsactivity extends AppCompatActivity {
 
                 // Создаем Intent для перехода к newpassActivity
                 Intent intent = new Intent(kodsmsactivity.this, newpassActivity.class);
-
+                intent.putExtra("log", login);
                 // Запускаем активность newpassActivity
                 startActivity(intent);
             }
