@@ -45,8 +45,10 @@ public class Bin extends AppCompatActivity {
         Button buttonBin = findViewById(R.id.buttonBin);
         Button buttonAccount = findViewById(R.id.buttonAccount);
         Bundle extras1 = getIntent().getExtras();
+
         addres = extras1.getString("keyAddress");
-        numberOfOrder = extras1.getString("number");
+        numberOfOrder= extras1.getString("number");
+
         CollectionReference colRef = db.collection("shopping_cart");
         colRef
                 .whereEqualTo("address", addres)
@@ -60,7 +62,7 @@ public class Bin extends AppCompatActivity {
                             kolvo = doc.getString("product_quantity");
                             data = idProduct;
                         }
-                        if (data == "") {
+                        if (data == null) {
                             String[] nullAdapter = new String[]{"Пока что тут пусто!"};
                             ArrayAdapter<String> adapterNull = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, nullAdapter);
                             ListView listView = findViewById(R.id.listView);
@@ -125,6 +127,8 @@ public class Bin extends AppCompatActivity {
                 // Обработчик для кнопки "аккаунт"
                 Intent intent = new Intent(Bin.this, Account.class);
                 intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+                intent.putExtra("keyAddress", addres);
+                intent.putExtra("number", numberOfOrder);
                 startActivity(intent);
             }
         });

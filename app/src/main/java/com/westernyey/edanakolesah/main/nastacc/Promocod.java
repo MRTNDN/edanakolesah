@@ -16,6 +16,7 @@ import com.westernyey.edanakolesah.vost.kodsmsactivity;
 import com.westernyey.edanakolesah.vost.newpassActivity;
 
 public class Promocod extends AppCompatActivity {
+    String addres, numberOfOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,15 @@ public class Promocod extends AppCompatActivity {
         Button buttonBin = findViewById(R.id.buttonbin);
         Button buttonAccount = findViewById(R.id.buttonaccount);
 
+        Bundle extras1 = getIntent().getExtras();
+        addres = extras1.getString("keyAddress");
+        numberOfOrder = extras1.getString("number");
+
         buttonMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(com.westernyey.edanakolesah.main.nastacc.Promocod.this, Main.class);
+                intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
         });
@@ -38,6 +44,8 @@ public class Promocod extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(com.westernyey.edanakolesah.main.nastacc.Promocod.this, Bin.class);
+                intent.putExtra("keyAddress", addres);
+                intent.putExtra("number", numberOfOrder);
                 startActivity(intent);
             }
         });
@@ -46,6 +54,8 @@ public class Promocod extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(com.westernyey.edanakolesah.main.nastacc.Promocod.this, com.westernyey.edanakolesah.main.Account.class);
+                intent.putExtra("keyAddress", addres);
+                intent.putExtra("number", numberOfOrder);
                 startActivity(intent);
             }
         });

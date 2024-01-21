@@ -12,6 +12,7 @@ import com.westernyey.edanakolesah.main.Bin;
 import com.westernyey.edanakolesah.main.Main;
 
 public class Support extends AppCompatActivity {
+    String addres, numberOfOrder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,11 +21,16 @@ public class Support extends AppCompatActivity {
         Button buttonBin = findViewById(R.id.buttonbin);
         Button buttonAccount = findViewById(R.id.buttonaccount);
 
+        Bundle extras1 = getIntent().getExtras();
+        addres = extras1.getString("keyAddress");
+        numberOfOrder = extras1.getString("number");
+
         buttonMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Обработчик для кнопки "главная"
                 Intent intent = new Intent(com.westernyey.edanakolesah.main.nastacc.Support.this, Main.class);
+                intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
         });
@@ -34,6 +40,8 @@ public class Support extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(com.westernyey.edanakolesah.main.nastacc.Support.this, Bin.class);
+                intent.putExtra("keyAddress", addres);
+                intent.putExtra("number", numberOfOrder);
                 startActivity(intent);
             }
         });
@@ -43,6 +51,8 @@ public class Support extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "аккаунт"
                 Intent intent = new Intent(com.westernyey.edanakolesah.main.nastacc.Support.this, com.westernyey.edanakolesah.main.Account.class);
+                intent.putExtra("keyAddress", addres);
+                intent.putExtra("number", numberOfOrder);
                 startActivity(intent);
             }
         });

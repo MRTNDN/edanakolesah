@@ -13,8 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.westernyey.edanakolesah.R;
 
 public class vostanovlenieActivity extends AppCompatActivity {
+
     Button editTextkodButton;
     TextView editTextLogin, editText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,8 @@ public class vostanovlenieActivity extends AppCompatActivity {
         editTextLogin = findViewById(R.id.editTextLogin);
         editTextkodButton = findViewById(R.id.editTextkod);
         editText = findViewById(R.id.editText);
+
+
         editTextkodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

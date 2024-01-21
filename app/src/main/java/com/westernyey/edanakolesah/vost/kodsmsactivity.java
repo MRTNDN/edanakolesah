@@ -16,12 +16,16 @@ import com.westernyey.edanakolesah.R;
 public class kodsmsactivity extends AppCompatActivity {
     Button sendButton;
     EditText codeEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.kodsmsactivity1);
         sendButton = findViewById(R.id.BText);
         codeEditText = findViewById(R.id.editText);
+
+
+
         // Назначим обработчик нажатия
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override

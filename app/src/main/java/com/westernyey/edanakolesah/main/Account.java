@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.westernyey.edanakolesah.R;
 
 public class Account extends AppCompatActivity {
+    String addres, numberOfOrder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +24,17 @@ public class Account extends AppCompatActivity {
         Button promonutton = findViewById(R.id.promonutton);
         Button passbutton = findViewById(R.id.passbutton);
 
+        Bundle extras1 = getIntent().getExtras();
+
+        addres = extras1.getString("keyAddress");
+        numberOfOrder = extras1.getString("number");
+
         buttonMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Обработчик для кнопки "главная"
                 Intent intent = new Intent(Account.this, Main.class);
+                intent.putExtra("keyAddress", addres);
                 startActivity(intent);
             }
         });
@@ -36,6 +43,9 @@ public class Account extends AppCompatActivity {
             public void onClick(View v) {
                 // Обработчик для кнопки "помощь"
                 Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.main.nastacc.Support.class);
+                intent.putExtra("keyAddress", addres);
+                if(numberOfOrder != null){
+                    intent.putExtra("number", numberOfOrder);}
                 startActivity(intent);
             }
         });
@@ -45,6 +55,9 @@ public class Account extends AppCompatActivity {
                 // Обработчик для кнопки "промокод"
                 Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.main.nastacc.Promocod.class);
                 intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+                intent.putExtra("keyAddress", addres);
+                if(numberOfOrder != null){
+                intent.putExtra("number", numberOfOrder);}
                 startActivity(intent);
             }
         });
@@ -54,6 +67,7 @@ public class Account extends AppCompatActivity {
                 // Обработчик для кнопки "изменить пароль."
                 Intent intent = new Intent(Account.this, com.westernyey.edanakolesah.vost.vostanovlenieActivity.class);
                 intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+
                 startActivity(intent);
             }
         });
@@ -65,6 +79,8 @@ public class Account extends AppCompatActivity {
                 // Обработчик для кнопки "корзина"
                 Intent intent = new Intent(Account.this, Bin.class);
                 intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+                intent.putExtra("keyAddress", addres);
+                intent.putExtra("number",numberOfOrder);
                 startActivity(intent);
             }
         });
@@ -75,6 +91,9 @@ public class Account extends AppCompatActivity {
                 // Обработчик для кнопки "аккаунт"
                 Intent intent = new Intent(Account.this, Account.class);
                 intent.setFlags(FLAG_ACTIVITY_SINGLE_TOP);
+                intent.putExtra("keyAddress", addres);
+                if(numberOfOrder != null){
+                    intent.putExtra("number", numberOfOrder);}
                 startActivity(intent);
             }
         });
