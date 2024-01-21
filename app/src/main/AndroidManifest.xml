@@ -60,8 +60,5 @@
         <activity
             android:name="com.westernyey.edanakolesah.main.nastacc.Promocod"
             android:label="promocod" />
-        <activity
-            android:name="com.westernyey.edanakolesah.main.nastacc.Historyzk"
-            android:label="historyzk" />
     </application>
 </manifest>

@@ -69,7 +69,7 @@
                             android:background="@drawable/button_backgroundminus"
                             android:gravity="center"
                             android:padding="8dp"
-                            android:text="Продукты"
+                            android:text="Продукты Магнит"
                             android:textColor="@color/black" />
 
                     </RelativeLayout>

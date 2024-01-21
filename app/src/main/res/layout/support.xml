@@ -34,40 +34,7 @@
             android:gravity="center"
             android:hint="Почта Тех.Поддержки -xxxxxx@mail.xyz"
             android:minHeight="38dp" />
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="16dp">
 
-            <Button
-                android:layout_width="0dp"
-                android:id="@+id/numzvom"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="20dp"
-                android:background="@drawable/button_background_krugloekoroche"
-                android:gravity="center"
-                android:hint="Позвонить"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:layout_marginEnd="8dp" />
-
-            <!-- Кнопка корзина -->
-            <Button
-                android:layout_width="0dp"
-                android:id="@+id/nummailz"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="20dp"
-                android:hint="Написать"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                android:background="@drawable/button_background_krugloekoroche"
-                android:layout_marginStart="8dp" />
-        </LinearLayout>
 
     </LinearLayout>
 

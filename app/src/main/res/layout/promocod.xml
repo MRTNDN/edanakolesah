@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="166dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/button_background_krugloekoroche"
@@ -36,7 +36,15 @@
             android:textColor="@android:color/white"
             android:textSize="22sp"
             android:layout_gravity="center" />
-
+        <ListView
+            android:id="@+id/listViewpromo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/confirmprom"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp" />
 
     </LinearLayout>
 

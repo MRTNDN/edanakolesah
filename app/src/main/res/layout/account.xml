@@ -21,43 +21,10 @@
         android:layout_marginBottom="16dp"
         android:hint="Настройки профиля"
         android:background="@drawable/button_background_krugloekoroche" />
-    <Button
-        android:id="@+id/adressbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/button_background_krugloekoroche"
-        android:gravity="center"
-        android:hint="Изменить адрес"
-        android:minHeight="38dp" />
 
-    <Button
-        android:id="@+id/oplbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:minHeight="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:hint="Изменить способ оплаты"
-        android:background="@drawable/button_background_krugloekoroche"/>
-    <Button
-        android:id="@+id/numbertelbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:minHeight="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:hint="изменить номер телефона"
-        android:background="@drawable/button_background_krugloekoroche"/>
+
+
+
     <Button
         android:id="@+id/passbutton"
         android:layout_width="match_parent"
@@ -70,18 +37,7 @@
         android:layout_marginBottom="16dp"
         android:hint="Изменить пароль"
         android:background="@drawable/button_background_krugloekoroche"/>
-    <Button
-        android:id="@+id/zakbutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:minHeight="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:hint="История заказов"
-        android:background="@drawable/button_background_krugloekoroche"/>
+
 
     <Button
         android:id="@+id/promonutton"
