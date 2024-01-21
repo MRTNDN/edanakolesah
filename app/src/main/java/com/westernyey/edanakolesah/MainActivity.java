@@ -1,5 +1,8 @@
 package com.westernyey.edanakolesah;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.PictureDrawable;
@@ -98,6 +101,16 @@ public class MainActivity extends AppCompatActivity {
                 updateButtonState();
             }
         });
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String savedLogin = preferences.getString("login", "");
+        String savedPassword = preferences.getString("password", "");
+
+        if (!savedLogin.isEmpty() && !savedPassword.isEmpty()) {
+            // Автоматически выполняем вход
+            editText1.setText(savedLogin);
+            editText2.setText(savedPassword);
+            click(null); // Передаем null вместо View, так как метод click(View) вызывается
+        }
     }
 
     private void updateButtonState() {
@@ -119,14 +132,16 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-
                                 String name = document.getString("name");
                                 String address = document.getString("address");
-                                //передача данных между активити
 
+                                // Сохраняем логин и пароль
+                                saveCredentials(editText1.getText().toString(), editText2.getText().toString());
+
+                                // Передача данных между активити
                                 Intent intent = new Intent(MainActivity.this, Main.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                                intent.putExtra("key",name);
+                                intent.putExtra("key", name);
                                 intent.putExtra("keyAddress", address);
                                 startActivity(intent);
                             }
@@ -136,5 +151,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    private void saveCredentials(String login, String password) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("login", login);
+        editor.putString("password", password);
+        editor.apply();
+    }
+
 
 }
